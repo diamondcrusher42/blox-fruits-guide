@@ -20,9 +20,11 @@
 
   <nav>
     <a href="#leveling">Leveling</a>
-    <a href="#fruits">Fruit Tier List</a>
-    <a href="#second-sea">Second Sea</a>
-    <a href="#third-sea">Third Sea</a>
+    <a href="#fruits">Tier List</a>
+    <a href="#prices">Prices</a>
+    <a href="#fighting">Fighting Styles</a>
+    <a href="#weapons">Weapons</a>
+    <a href="#puzzles">Puzzles</a>
     <a href="#tips">Pro Tips</a>
   </nav>
 
@@ -86,7 +88,6 @@
       <p>Not all fruits are equal. Here's what to use for grinding vs fighting other players.</p>
 
       <div class="tier-table">
-
         <div class="tier-row tier-s">
           <div class="tier-label">S</div>
           <div class="tier-fruits">
@@ -97,18 +98,17 @@
             <div class="fruit-chip">🐯 Tiger</div>
           </div>
         </div>
-
         <div class="tier-row tier-a">
           <div class="tier-label">A</div>
           <div class="tier-fruits">
             <div class="fruit-chip">⚡ Lightning</div>
             <div class="fruit-chip">❄️ Yeti</div>
             <div class="fruit-chip">☠️ Venom</div>
-            <div class="fruit-chip">🌊 Water</div>
+            <div class="fruit-chip">🌀 Control</div>
             <div class="fruit-chip">🕶️ Shadow</div>
+            <div class="fruit-chip">🔮 Spirit</div>
           </div>
         </div>
-
         <div class="tier-row tier-b">
           <div class="tier-label">B</div>
           <div class="tier-fruits">
@@ -117,101 +117,384 @@
             <div class="fruit-chip">💎 Quake</div>
             <div class="fruit-chip">🕸️ Spider</div>
             <div class="fruit-chip">🌀 Rubber</div>
+            <div class="fruit-chip">🌊 Blizzard</div>
           </div>
         </div>
-
         <div class="tier-row tier-c">
           <div class="tier-label">C</div>
           <div class="tier-fruits">
-            <div class="fruit-chip">🪨 Stone</div>
+            <div class="fruit-chip">🪨 Magma</div>
             <div class="fruit-chip">❄️ Ice</div>
-            <div class="fruit-chip">💦 Swim</div>
+            <div class="fruit-chip">💡 Light</div>
+            <div class="fruit-chip">🐦 Phoenix</div>
           </div>
         </div>
-
       </div>
 
       <div class="special-box">
         <h3>🙏 Buddha — The Grinding King</h3>
-        <p>Buddha is <strong>S+ tier for PvE grinding</strong>. Its transformation gives you a massive hitbox, hits entire mobs without aiming, and gives 40% damage reduction. If you don't have Buddha by level 1000 — get it immediately. Pair with <strong>Superhuman</strong> or <strong>Electric Claw</strong> fighting style for maximum damage.</p>
-        <p><em>Note: Buddha is C-tier in PvP — the big hitbox makes you easier to hit. Use Leopard or Dough for PvP.</em></p>
+        <p>Buddha is <strong>S+ tier for PvE grinding</strong>. Massive hitbox, hits entire mobs without aiming, 40% damage reduction. Get it by Level 1000 — it's worth every Beli. Pair with <strong>Superhuman</strong> or <strong>Electric Claw</strong>.</p>
+        <p><em>PvP: C-tier — big hitbox = easier to hit. Use Leopard or Dough for PvP instead.</em></p>
       </div>
 
       <div class="special-box awakening-box">
         <h3>⚡ Awakening Priority</h3>
         <ul>
-          <li><strong>Dough (Awakened)</strong> — Turns a strong fruit into a broken one. Best awakened PvP fruit.</li>
-          <li><strong>Buddha (Awakened)</strong> — Even faster grinding, extended hitbox range.</li>
-          <li><strong>Leopard</strong> — Already strong unawakened, awakened = top tier everything.</li>
+          <li><strong>Dough (Awakened)</strong> — Best awakened PvP fruit. Insane combo potential.</li>
+          <li><strong>Buddha (Awakened)</strong> — Even faster grinding, extended hitbox.</li>
+          <li><strong>Leopard</strong> — Already S-tier unawakened, awakened = broken.</li>
         </ul>
       </div>
     </section>
 
-    <!-- SECOND SEA -->
-    <section id="second-sea">
-      <h2>🌊 Second Sea Guide (Level 700–1500)</h2>
+    <!-- FRUIT PRICES -->
+    <section id="prices">
+      <h2>💰 Fruit Prices</h2>
+      <p>All fruits available from the Blox Fruit Dealer. Dealer stock refreshes every 4 hours. Robux fruits stay permanently in your inventory.</p>
 
+      <div class="price-tabs">
+        <button class="tab-btn active" onclick="showRarity('mythical')">🔴 Mythical</button>
+        <button class="tab-btn" onclick="showRarity('legendary')">🟠 Legendary</button>
+        <button class="tab-btn" onclick="showRarity('rare')">🔵 Rare</button>
+        <button class="tab-btn" onclick="showRarity('uncommon')">🟢 Uncommon</button>
+        <button class="tab-btn" onclick="showRarity('common')">⚪ Common</button>
+      </div>
+
+      <div id="mythical" class="price-table-wrap active-table">
+        <table class="price-table">
+          <thead><tr><th>Fruit</th><th>Beli Price</th><th>Robux</th></tr></thead>
+          <tbody>
+            <tr><td>🐲 Dragon</td><td>15,000,000</td><td>5,000 R$</td></tr>
+            <tr><td>🌀 Control</td><td>9,000,000</td><td>4,000 R$</td></tr>
+            <tr><td>🦊 Kitsune</td><td>8,000,000</td><td>4,000 R$</td></tr>
+            <tr><td>❄️ Yeti</td><td>5,000,000</td><td>3,000 R$</td></tr>
+            <tr><td>🐯 Tiger</td><td>5,000,000</td><td>3,000 R$</td></tr>
+            <tr><td>🔮 Spirit</td><td>3,400,000</td><td>2,550 R$</td></tr>
+            <tr><td>💨 Gas</td><td>3,200,000</td><td>2,500 R$</td></tr>
+            <tr><td>☠️ Venom</td><td>3,000,000</td><td>2,450 R$</td></tr>
+            <tr><td>🕶️ Shadow</td><td>2,900,000</td><td>2,425 R$</td></tr>
+            <tr><td>🍩 Dough</td><td>2,800,000</td><td>2,400 R$</td></tr>
+            <tr><td>🦖 T-Rex</td><td>2,700,000</td><td>2,350 R$</td></tr>
+            <tr><td>🦣 Mammoth</td><td>2,700,000</td><td>2,350 R$</td></tr>
+            <tr><td>🌌 Gravity</td><td>2,500,000</td><td>2,300 R$</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="legendary" class="price-table-wrap">
+        <table class="price-table">
+          <thead><tr><th>Fruit</th><th>Beli Price</th><th>Robux</th></tr></thead>
+          <tbody>
+            <tr><td>⚡ Lightning</td><td>2,100,000</td><td>2,100 R$</td></tr>
+            <tr><td>😢 Pain</td><td>2,300,000</td><td>2,200 R$</td></tr>
+            <tr><td>🌨️ Blizzard</td><td>2,400,000</td><td>2,250 R$</td></tr>
+            <tr><td>🕳️ Portal</td><td>1,900,000</td><td>2,000 R$</td></tr>
+            <tr><td>🐦 Phoenix</td><td>1,800,000</td><td>2,000 R$</td></tr>
+            <tr><td>🎵 Sound</td><td>1,700,000</td><td>1,900 R$</td></tr>
+            <tr><td>🕸️ Spider</td><td>1,500,000</td><td>1,800 R$</td></tr>
+            <tr><td>🏗️ Creation</td><td>1,400,000</td><td>1,750 R$</td></tr>
+            <tr><td>❤️ Love</td><td>1,300,000</td><td>1,700 R$</td></tr>
+            <tr><td>🙏 Buddha</td><td>1,200,000</td><td>1,650 R$</td></tr>
+            <tr><td>💥 Quake</td><td>1,000,000</td><td>1,500 R$</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="rare" class="price-table-wrap">
+        <table class="price-table">
+          <thead><tr><th>Fruit</th><th>Beli Price</th><th>Robux</th></tr></thead>
+          <tbody>
+            <tr><td>👻 Ghost</td><td>940,000</td><td>1,275 R$</td></tr>
+            <tr><td>🌋 Magma</td><td>960,000</td><td>1,300 R$</td></tr>
+            <tr><td>🌀 Rubber</td><td>750,000</td><td>1,200 R$</td></tr>
+            <tr><td>💡 Light</td><td>650,000</td><td>1,100 R$</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="uncommon" class="price-table-wrap">
+        <table class="price-table">
+          <thead><tr><th>Fruit</th><th>Beli Price</th><th>Robux</th></tr></thead>
+          <tbody>
+            <tr><td>💎 Diamond</td><td>600,000</td><td>1,000 R$</td></tr>
+            <tr><td>🦅 Eagle</td><td>550,000</td><td>975 R$</td></tr>
+            <tr><td>🌑 Dark</td><td>500,000</td><td>950 R$</td></tr>
+            <tr><td>🏖️ Sand</td><td>420,000</td><td>850 R$</td></tr>
+            <tr><td>❄️ Ice</td><td>350,000</td><td>750 R$</td></tr>
+            <tr><td>🔥 Flame</td><td>250,000</td><td>550 R$</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="common" class="price-table-wrap">
+        <table class="price-table">
+          <thead><tr><th>Fruit</th><th>Beli Price</th><th>Robux</th></tr></thead>
+          <tbody>
+            <tr><td>💥 Spike</td><td>180,000</td><td>380 R$</td></tr>
+            <tr><td>💣 Bomb</td><td>80,000</td><td>220 R$</td></tr>
+            <tr><td>💨 Smoke</td><td>100,000</td><td>250 R$</td></tr>
+            <tr><td>🌱 Spring</td><td>60,000</td><td>180 R$</td></tr>
+            <tr><td>🗡️ Blade</td><td>30,000</td><td>100 R$</td></tr>
+            <tr><td>🌀 Spin</td><td>7,500</td><td>75 R$</td></tr>
+            <tr><td>🚀 Rocket</td><td>5,000</td><td>50 R$</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="info-box">
+        <strong>💡 Tip:</strong> Buying with Robux gives you a <strong>Permanent</strong> fruit that stays in your inventory forever, even if you eat another fruit. Worth it for Buddha, Dragon, or Dough!
+      </div>
+    </section>
+
+    <!-- FIGHTING STYLES -->
+    <section id="fighting">
+      <h2>🥊 Fighting Styles</h2>
+      <p>Fighting styles are your martial arts — combine them with fruits for devastating combos. Unlock them in order.</p>
+
+      <h3 class="sub-heading">🟦 First Sea — Basic Styles</h3>
       <div class="card-grid">
-        <div class="card">
-          <h3>How to Unlock</h3>
-          <ol>
-            <li>Reach <strong>Level 700</strong></li>
-            <li>Talk to the <strong>Military Detective</strong> NPC</li>
-            <li>Get the special key</li>
-            <li>Go to the cave in <strong>Frozen Village</strong></li>
-            <li>Defeat the <strong>Ice Admiral</strong></li>
-            <li>Portal to Second Sea opens!</li>
-          </ol>
-        </div>
 
         <div class="card">
-          <h3>Key Locations</h3>
+          <h3>👣 Dark Step</h3>
+          <div class="style-meta"><span class="tag tag-first">First Sea</span></div>
           <ul>
-            <li>🏰 <strong>Ice Castle</strong> — Best grinding spot, farm Awakened Ice Admiral</li>
-            <li>🏙️ <strong>Kingdom of Rose</strong> — Main hub, quests and upgrades</li>
-            <li>🏝️ <strong>Hydra Island</strong> — Mid-second sea area</li>
-            <li>⚠️ <strong>Forgotten Island</strong> — Skip it, bad XP</li>
+            <li><strong>Trainer:</strong> Dark Step Teacher (Shells Town area)</li>
+            <li><strong>Cost:</strong> 150,000 Beli</li>
+            <li><strong>Good for:</strong> PvP stuns, combo starter</li>
           </ul>
         </div>
 
         <div class="card">
-          <h3>Don Swan (Level 1000 Boss)</h3>
+          <h3>💧 Water Kung Fu</h3>
+          <div class="style-meta"><span class="tag tag-first">First Sea</span></div>
           <ul>
-            <li>Give <strong>Trevor</strong> a fruit worth $1,000,000+</li>
-            <li>Uses Spider fruit — 2 phases</li>
-            <li><strong>Phase 1:</strong> Multi-Spider attack (X shape) + Ultimate Thread</li>
-            <li><strong>Phase 2:</strong> Much faster, Awakened Ultimate Thread (3-way), Overheated Sniper</li>
-            <li>Tip: Use ranged moves, stay mobile</li>
+            <li><strong>Trainer:</strong> Water Kung Fu Teacher (Underwater City)</li>
+            <li><strong>Cost:</strong> 750,000 Beli</li>
+            <li><strong>Good for:</strong> Damage, useful against Flame/Magma users</li>
           </ul>
+        </div>
+
+        <div class="card">
+          <h3>⚡ Electric</h3>
+          <div class="style-meta"><span class="tag tag-first">First Sea</span></div>
+          <ul>
+            <li><strong>Trainer:</strong> Shanks (Hot and Cold island)</li>
+            <li><strong>Cost:</strong> 500,000 Beli</li>
+            <li><strong>Good for:</strong> Fast attacks, paralysis</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>🐉 Dragon Breath</h3>
+          <div class="style-meta"><span class="tag tag-first">First Sea</span></div>
+          <ul>
+            <li><strong>Trainer:</strong> Dragon Breath Teacher (Cafe)</li>
+            <li><strong>Cost:</strong> 500,000 Beli</li>
+            <li><strong>Good for:</strong> AoE fire damage</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <h3 class="sub-heading">🟩 Second Sea — Advanced Styles</h3>
+      <div class="card-grid">
+
+        <div class="card highlight-card">
+          <h3>💪 Superhuman</h3>
+          <div class="style-meta"><span class="tag tag-second">Second Sea</span></div>
+          <ul>
+            <li><strong>Trainer:</strong> Martial Arts Master (Café, Second Sea)</li>
+            <li><strong>Cost:</strong> 3,000,000 Beli</li>
+            <li><strong>Requirements:</strong> 300 mastery in Dark Step + Water Kung Fu + Dragon Breath + Electric</li>
+            <li><strong>Good for:</strong> Best all-around style before Third Sea — great damage, stuns, combos</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>🔱 Sharkman Karate</h3>
+          <div class="style-meta"><span class="tag tag-second">Second Sea</span></div>
+          <ul>
+            <li><strong>Trainer:</strong> Underwater, Second Sea</li>
+            <li><strong>Cost:</strong> 2,500,000 Beli + 5,000 Fragments</li>
+            <li><strong>Requirements:</strong> Level 1,000+</li>
+            <li><strong>Good for:</strong> Water-based combos, sea beast hunting</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <h3 class="sub-heading">🔴 Third Sea — Elite Styles</h3>
+      <div class="card-grid">
+
+        <div class="card highlight-card">
+          <h3>⚡ Electric Claw</h3>
+          <div class="style-meta"><span class="tag tag-third">Third Sea</span></div>
+          <ul>
+            <li><strong>Trainer:</strong> Rip_Indra (Port Town, Third Sea)</li>
+            <li><strong>Cost:</strong> 3,000,000 Beli + 5,000 Fragments</li>
+            <li><strong>Requirements:</strong> 400 mastery in Electric</li>
+            <li><strong>Good for:</strong> Top-tier PvP, fastest M1s, sea beast damage</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>🐲 Dragon Talon</h3>
+          <div class="style-meta"><span class="tag tag-third">Third Sea</span></div>
+          <ul>
+            <li><strong>Trainer:</strong> Uzoth (Haunted Castle, Third Sea)</li>
+            <li><strong>Cost:</strong> 3,000,000 Beli + 5,000 Fragments</li>
+            <li><strong>Requirements:</strong> 400 mastery in Dragon Breath</li>
+            <li><strong>Good for:</strong> High damage combos, works with Dragon fruit</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>🩸 Sanguine Art</h3>
+          <div class="style-meta"><span class="tag tag-third">Third Sea</span></div>
+          <ul>
+            <li><strong>Trainer:</strong> Third Sea (Secret location)</li>
+            <li><strong>Cost:</strong> High Beli + Fragments</li>
+            <li><strong>Good for:</strong> SS-tier PvP, life-steal, insane combo extension</li>
+            <li><em>Currently one of the strongest styles in the game</em></li>
+          </ul>
+        </div>
+
+        <div class="card highlight-card">
+          <h3>👑 God Human</h3>
+          <div class="style-meta"><span class="tag tag-third">Third Sea</span></div>
+          <ul>
+            <li><strong>Trainer:</strong> Elevated (Third Sea)</li>
+            <li><strong>Cost:</strong> 5,000,000 Beli + 5,000 Fragments</li>
+            <li><strong>Requirements:</strong> 400 mastery in Superhuman + Electric Claw + Dragon Talon + Sharkman Karate + Death Step</li>
+            <li><strong>Total cost to unlock all prerequisites:</strong> ~20.4M Beli + 26,500 Fragments</li>
+            <li><strong>Good for:</strong> THE best fighting style — best damage, best combos, best PvP</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="info-box">
+        <strong>🎯 Unlock Order:</strong> Dark Step → Electric → Dragon Breath → Water Kung Fu → Superhuman (Second Sea) → Electric Claw → Dragon Talon → God Human (endgame)
+      </div>
+    </section>
+
+    <!-- WEAPONS -->
+    <section id="weapons">
+      <h2>⚔️ Secret Weapons</h2>
+
+      <div class="weapon-block">
+        <h3>🎸 Soul Guitar (Skull Guitar)</h3>
+        <div class="req-bar">
+          <span class="req-badge">Level 2,300+</span>
+          <span class="req-badge req-beli">5,000,000 Beli</span>
+          <span class="req-badge req-mat">250 Ectoplasm</span>
+          <span class="req-badge req-mat">500 Bones</span>
+          <span class="req-badge req-mat">1 Dark Fragment</span>
+        </div>
+        <p class="weapon-loc">📍 Location: <strong>Haunted Castle Island</strong> — Third Sea. Only available on a <strong>full moon</strong> (every 8 in-game days, or every 3 days in a private server).</p>
+
+        <div class="steps-list">
+          <div class="step"><span class="step-num">1</span><div><strong>Zombie Challenge</strong> — Kill 6 Living Zombies simultaneously with one AoE attack. They spawn near the red lake on the far side of the island. Lure all 6 together, then blast them at once.</div></div>
+          <div class="step"><span class="step-num">2</span><div><strong>Gravestone Puzzle</strong> — Go to the graveyard. Two rows of signs lead to the castle entrance. Count the gravestones next to each sign. Click the sign with the MOST gravestones next to it.</div></div>
+          <div class="step"><span class="step-num">3</span><div><strong>Trophy Puzzle</strong> — Go to the garden (between the castle and Soul Reaper room). Memorize/screenshot the trophy order facing the castle. Then go to the electrical room under the castle → circuits room → enter the code matching the trophy directions.</div></div>
+          <div class="step"><span class="step-num">4</span><div><strong>Pipe Puzzle</strong> — Look at the tiles on the floor. Click tiles until their colors match the colors of the pipes on the wall and ceiling.</div></div>
+          <div class="step"><span class="step-num">5</span><div><strong>Craft</strong> — Complete all steps → go to the Weird Machine in the castle basement → hand over your materials → receive the Soul Guitar!</div></div>
+        </div>
+      </div>
+
+      <div class="weapon-block">
+        <h3>⚔️ Cursed Dual Katana (CDK)</h3>
+        <div class="req-bar">
+          <span class="req-badge">Level 2,200+</span>
+          <span class="req-badge req-sword">Yama — 350+ mastery</span>
+          <span class="req-badge req-sword">Tushita — 350+ mastery</span>
+        </div>
+        <p class="weapon-loc">📍 Location: <strong>Mansion</strong> — Third Sea. Talk to the <strong>Crypt Master</strong> NPC next to the big stone building on the hill behind the Mansion.</p>
+
+        <div class="steps-list">
+          <div class="step"><span class="step-num">1</span><div><strong>Get Both Swords</strong> — Obtain Yama and Tushita and level both to <strong>350+ mastery</strong>. This takes time — don't skip it.</div></div>
+          <div class="step"><span class="step-num">2</span><div><strong>Find Crypt Master</strong> — He's behind the Mansion on the hill. Talk to him to start the puzzle.</div></div>
+          <div class="step"><span class="step-num">3</span><div><strong>Two Scrolls, Six Trials</strong> — Inside the Mansion are 2 scrolls, each with 3 trials. Complete the Yama trials with Yama equipped, and Tushita trials with Tushita equipped.</div></div>
+          <div class="step"><span class="step-num">4</span><div><strong>Collect Alucard Fragments</strong> — Finishing all 6 trials gives you 6 Alucard Fragments. Place them on the pedestal at the front of the Mansion.</div></div>
+          <div class="step"><span class="step-num">5</span><div><strong>Defeat the Boss</strong> — A Level 2,025 Cursed Skeleton Boss spawns. You can ONLY damage it with Yama or Tushita. Beat it → 100% drop rate for the CDK!</div></div>
+        </div>
+
+        <div class="info-box" style="margin-top:1rem;">
+          <strong>💡 CDK Tips:</strong> The boss is hard — bring a friend. Make sure you don't accidentally switch weapons. The CDK is one of the most powerful swords in the game — worth the grind!
         </div>
       </div>
     </section>
 
-    <!-- THIRD SEA -->
-    <section id="third-sea">
-      <h2>🌋 Third Sea Guide (Level 1500+)</h2>
+    <!-- PUZZLES -->
+    <section id="puzzles">
+      <h2>🧩 Puzzle Hints</h2>
+      <p>Quick cheat sheet for every major puzzle in Blox Fruits.</p>
 
       <div class="card-grid">
+
         <div class="card">
-          <h3>How to Unlock</h3>
-          <ol>
-            <li>Reach <strong>Level 1500</strong></li>
-            <li>Complete questline with <strong>King Red Head</strong></li>
-            <li>Defeat <strong>Don Swan</strong></li>
-            <li>Take <strong>Mr. Captain's boat</strong> from Docks 3</li>
-          </ol>
+          <h3>🏴‍☠️ Darkbeard Awakening</h3>
+          <ul>
+            <li>Collect 30 Magma Ore (from Fire Island)</li>
+            <li>Collect 30 Leather (from Swan Pirates)</li>
+            <li>Collect 20 Scrap Metal (from Camels)</li>
+            <li>Deliver to <strong>Blacksmith NPC</strong> in Second Sea to forge Raid Chip</li>
+          </ul>
         </div>
 
         <div class="card">
-          <h3>What's in Third Sea</h3>
+          <h3>🐉 Rip_Indra Portal (Electric Claw unlock)</h3>
           <ul>
-            <li>🗺️ New islands and much harder enemies</li>
-            <li>⚔️ Awakening available for more fruits</li>
-            <li>🏆 Raids for gear and upgrades</li>
-            <li>💪 Level cap: <strong>2450</strong></li>
-            <li>🌟 God Human fighting style (endgame)</li>
+            <li>Talk to Rip_Indra at Port Town</li>
+            <li>Need 400 Electric mastery</li>
+            <li>Pay 3,000,000 Beli + 5,000 Fragments</li>
+            <li>He's only accessible after defeating the Sea Beast raid</li>
           </ul>
         </div>
+
+        <div class="card">
+          <h3>👑 God Human Unlock Puzzle</h3>
+          <ul>
+            <li>Reach Third Sea + Level 2,300+</li>
+            <li>Have 400+ mastery in: Superhuman, Electric Claw, Dragon Talon, Sharkman Karate, Death Step</li>
+            <li>Bring 5,000,000 Beli + 5,000 Fragments</li>
+            <li>Talk to the Elevated teacher in Third Sea</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>🎸 Soul Guitar Puzzle</h3>
+          <ul>
+            <li>Wait for <strong>full moon</strong> at Haunted Castle</li>
+            <li>Kill 6 zombies at once (AoE attack)</li>
+            <li>Click gravestone sign with most graves</li>
+            <li>Match trophies → enter circuit code</li>
+            <li>Match pipe tile colors to wall pipes</li>
+            <li>Craft at the Weird Machine in the basement</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>⚔️ Cursed Dual Katana Puzzle</h3>
+          <ul>
+            <li>Need Yama + Tushita at 350+ mastery each</li>
+            <li>Find Crypt Master behind Mansion</li>
+            <li>Complete 6 trials with the correct sword equipped</li>
+            <li>Place 6 Alucard Fragments on the pedestal</li>
+            <li>Beat the Lv. 2025 boss (only Yama/Tushita can damage it!)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>🌊 Sea Beast Hunting</h3>
+          <ul>
+            <li>Spawn by dealing damage to sea monsters while sailing</li>
+            <li>Use Electric Claw or Godhuman M1 to hit them underwater</li>
+            <li>Good drops: Fragments, Shark Tooth, Sea Beast materials</li>
+            <li>Best done in a group of 2-3 players</li>
+          </ul>
+        </div>
+
       </div>
     </section>
 
@@ -235,8 +518,8 @@
 
         <div class="tip-card">
           <div class="tip-icon">2x</div>
-          <h3>Use 2x XP</h3>
-          <p>When there's a 2x XP event in the game, grind as hard as you can. You can level up twice as fast!</p>
+          <h3>Use 2x XP Events</h3>
+          <p>When there's a 2x XP event, grind as hard as you can. You level up twice as fast!</p>
         </div>
 
         <div class="tip-card">
@@ -248,25 +531,25 @@
         <div class="tip-card">
           <div class="tip-icon">🥋</div>
           <h3>Fighting Style Matters</h3>
-          <p>Learn <strong>Superhuman</strong> or <strong>Electric Claw</strong> — they deal massive damage and have great combos with top fruits.</p>
+          <p>Get <strong>Superhuman</strong> in Second Sea. Then work toward <strong>Electric Claw</strong> or <strong>God Human</strong> in Third Sea.</p>
         </div>
 
         <div class="tip-card">
           <div class="tip-icon">🌊</div>
           <h3>Rush Second Sea at 700</h3>
-          <p>Don't hang around in First Sea too long. Get to Level 700, unlock Second Sea, and the XP gains get much better.</p>
+          <p>Don't hang around First Sea too long. Get to Level 700, unlock Second Sea — XP gains are much better.</p>
         </div>
 
         <div class="tip-card">
           <div class="tip-icon">👥</div>
           <h3>Party Up</h3>
-          <p>Grinding with a friend who has Buddha? Let them tank the mobs while you deal damage. Faster kills, shared quest XP.</p>
+          <p>Friend has Buddha? Let them tank mobs while you deal damage. Faster kills, shared quest XP.</p>
         </div>
 
         <div class="tip-card">
           <div class="tip-icon">🏪</div>
           <h3>Check the Shop Daily</h3>
-          <p>The Blox Fruit dealer's stock changes every hour. Rare fruits like Leopard or Dough can appear — always check!</p>
+          <p>The Fruit Dealer stock changes every 4 hours. Rare fruits like Leopard or Dragon can appear — always check!</p>
         </div>
 
       </div>
@@ -276,8 +559,17 @@
 
   <footer>
     <p>Made for Lev 🎮 | Blox Fruits Level 500+ Guide</p>
-    <p class="footer-sources">Sources: <a href="https://blox-fruits.fandom.com/wiki/Leveling_Guide" target="_blank">Blox Fruits Wiki</a> · <a href="https://outputlag.com/guides/blox-fruits-leveling-guide-complete-route-from-level-1-to-max-level/" target="_blank">OutputLag</a> · <a href="https://bloxfruit.io/tier-lists/fruits-overall/" target="_blank">BloxFruit.io</a></p>
+    <p class="footer-sources">Sources: <a href="https://blox-fruits.fandom.com/wiki/Leveling_Guide" target="_blank">Blox Fruits Wiki</a> · <a href="https://outputlag.com/guides/blox-fruits-leveling-guide-complete-route-from-level-1-to-max-level/" target="_blank">OutputLag</a> · <a href="https://bloxfruit.io/tier-lists/fruits-overall/" target="_blank">BloxFruit.io</a> · <a href="https://beebom.com/all-fruits-in-blox-fruits/" target="_blank">Beebom</a></p>
   </footer>
+
+  <script>
+    function showRarity(id) {
+      document.querySelectorAll('.price-table-wrap').forEach(el => el.classList.remove('active-table'));
+      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+      document.getElementById(id).classList.add('active-table');
+      event.target.classList.add('active');
+    }
+  </script>
 
 </body>
 </html>

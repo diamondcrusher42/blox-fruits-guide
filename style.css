@@ -355,8 +355,174 @@ footer p { margin-bottom: 0.3rem; }
 footer a { color: var(--orange); text-decoration: none; }
 footer a:hover { text-decoration: underline; }
 
+/* === PRICE TABLE === */
+.price-tabs {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.tab-btn {
+  background: var(--card);
+  border: 1px solid #3a3a5a;
+  color: var(--text-dim);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.tab-btn:hover, .tab-btn.active {
+  background: var(--orange);
+  color: #000;
+  border-color: var(--orange);
+}
+
+.price-table-wrap { display: none; }
+.price-table-wrap.active-table { display: block; }
+
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.price-table th {
+  background: var(--card2);
+  padding: 0.8rem 1rem;
+  text-align: left;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-dim);
+}
+
+.price-table td {
+  padding: 0.7rem 1rem;
+  font-size: 0.93rem;
+  border-bottom: 1px solid #2a2a4a;
+  color: var(--text);
+}
+
+.price-table tr:last-child td { border-bottom: none; }
+.price-table tr:hover td { background: rgba(255,107,0,0.05); }
+.price-table td:nth-child(2) { color: #ffd700; font-weight: 700; }
+.price-table td:nth-child(3) { color: #a29bfe; }
+
+.info-box {
+  background: rgba(255,107,0,0.08);
+  border: 1px solid rgba(255,107,0,0.3);
+  border-radius: 10px;
+  padding: 0.9rem 1.2rem;
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  margin-top: 0.5rem;
+}
+
+.info-box strong { color: var(--orange-light); }
+
+/* === FIGHTING STYLES === */
+.sub-heading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-dim);
+  margin: 1.5rem 0 0.8rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid #2a2a4a;
+}
+
+.highlight-card { border-color: var(--orange) !important; }
+.highlight-card h3 { color: var(--orange-light); }
+
+.style-meta { margin: 0.3rem 0 0.6rem; }
+
+/* === WEAPONS === */
+.weapon-block {
+  background: var(--card);
+  border-radius: 14px;
+  padding: 1.8rem;
+  border: 1px solid #2a2a4a;
+  margin-bottom: 1.5rem;
+}
+
+.weapon-block:hover { border-color: var(--orange); }
+
+.weapon-block h3 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.8rem;
+}
+
+.req-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.9rem;
+}
+
+.req-badge {
+  background: var(--card2);
+  border: 1px solid #3a3a5a;
+  border-radius: 20px;
+  padding: 0.25rem 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.req-beli { border-color: #ffd700; color: #ffd700; background: rgba(255,215,0,0.08); }
+.req-mat { border-color: #a29bfe; color: #a29bfe; background: rgba(162,155,254,0.08); }
+.req-sword { border-color: var(--s-tier); color: var(--s-tier); background: rgba(255,71,87,0.08); }
+
+.weapon-loc {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  margin-bottom: 1.2rem;
+}
+
+.weapon-loc strong { color: #fff; }
+
+.steps-list { display: flex; flex-direction: column; gap: 0.8rem; }
+
+.step {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.step-num {
+  background: var(--orange);
+  color: #000;
+  font-weight: 900;
+  font-size: 0.85rem;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.step div {
+  font-size: 0.92rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+
+.step div strong { color: #fff; }
+
 /* === RESPONSIVE === */
 @media (max-width: 600px) {
   .header-inner { flex-direction: column; gap: 0.5rem; }
   .tier-row { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .weapon-block { padding: 1.2rem; }
 }

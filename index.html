@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="sl">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blox Fruits – Vodnik za Leva</title>
+<title>Blox Fruits – Guide for Lev</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>
@@ -27,6 +27,9 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,12,20,0.94);backdrop-fi
 .nav-links{display:flex;gap:4px;}
 .nav-link{padding:6px 12px;border-radius:8px;font-size:0.8rem;font-weight:600;color:var(--muted);cursor:pointer;text-decoration:none;transition:all 0.18s;border:none;background:transparent;font-family:inherit;}
 .nav-link:hover,.nav-link.active{color:var(--text);background:var(--surface2);}
+.lang-toggle{display:flex;align-items:center;gap:4px;background:var(--surface2);border:1px solid var(--border);border-radius:24px;padding:3px;overflow:hidden;}
+.lang-btn{padding:5px 14px;border-radius:20px;cursor:pointer;font-size:0.8rem;font-weight:600;border:none;background:transparent;color:var(--muted);transition:all 0.2s;letter-spacing:0.3px;font-family:inherit;}
+.lang-btn.active{background:var(--accent);color:#fff;}
 
 .hero{background:linear-gradient(160deg,#050d28 0%,#0b1240 40%,#0d1a50 70%,#0a0c14 100%);padding:80px 24px 60px;text-align:center;position:relative;overflow:hidden;}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(79,138,255,0.15) 0%,transparent 70%);pointer-events:none;}
@@ -43,7 +46,6 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,12,20,0.94);backdrop-fi
 .section{max-width:1200px;margin:0 auto;padding:60px 20px;}
 .section-title{font-size:1.6rem;font-weight:800;margin-bottom:6px;display:flex;align-items:center;gap:10px;}
 .section-sub{color:var(--muted);font-size:0.9rem;margin-bottom:32px;}
-.section-divider{border:none;border-top:1px solid var(--border);margin:0;}
 
 .level-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;}
 .level-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:22px;border-left:3px solid var(--accent);transition:all 0.18s;}
@@ -70,7 +72,6 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,12,20,0.94);backdrop-fi
 .fill-sword{background:linear-gradient(90deg,#fbbf24,#f5c542);}
 .fill-gun{background:linear-gradient(90deg,#4ade80,#22d3ee);}
 .stat-val{font-size:0.78rem;font-weight:700;color:var(--muted);width:52px;text-align:right;flex-shrink:0;}
-
 .tip-box{background:rgba(79,138,255,0.07);border:1px solid rgba(79,138,255,0.2);border-left:3px solid var(--accent);padding:14px 18px;border-radius:10px;font-size:0.86rem;color:#8faad8;margin-top:16px;}
 .tip-box strong{color:#aec8f0;}
 
@@ -166,349 +167,360 @@ footer a:hover{text-decoration:underline;}
 <body>
 
 <nav>
-  <div class="nav-logo">⚔️ Blox Fruits Vodnik</div>
-  <nav class="nav-links">
-    <a class="nav-link" href="#level">Nivo 800</a>
-    <a class="nav-link" href="#fruits">Sadeži</a>
-    <a class="nav-link" href="#swords">Meči</a>
-    <a class="nav-link" href="#effects">Učinki</a>
-  </nav>
+  <div class="nav-logo">⚔️ <span data-sl="Blox Fruits Vodnik">Blox Fruits Guide</span></div>
+  <div class="nav-links">
+    <a class="nav-link" href="#level" data-sl="Nivo 800">Level 800</a>
+    <a class="nav-link" href="#fruits" data-sl="Sadeži">Fruits</a>
+    <a class="nav-link" href="#swords" data-sl="Meči">Swords</a>
+    <a class="nav-link" href="#effects" data-sl="Učinki">Effects</a>
+  </div>
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-en" onclick="setLang('en')">🇬🇧 EN</button>
+    <button class="lang-btn" id="btn-sl" onclick="setLang('sl')">🇸🇮 SL</button>
+  </div>
 </nav>
 
 <section class="hero">
-  <div class="hero-badge">🎮 Za Leva · April 2026</div>
-  <h1>Blox Fruits<br>Popoln Vodnik</h1>
-  <p class="hero-sub">Vse kar moraš vedeti o sadežih, mečih, učinkih in strategiji za nivo 800+</p>
+  <div class="hero-badge" data-sl="🎮 Za Leva · April 2026">🎮 For Lev · April 2026</div>
+  <h1>Blox Fruits<br><span data-sl="Popoln Vodnik">Complete Guide</span></h1>
+  <p class="hero-sub" data-sl="Vse kar moraš vedeti o sadežih, mečih, učinkih in strategiji za nivo 800+">Everything you need to know about fruits, swords, effects and strategy for level 800+</p>
   <div class="stats-row">
-    <div class="stat"><div class="stat-num">41</div><div class="stat-label">Sadeži</div></div>
-    <div class="stat"><div class="stat-num">40</div><div class="stat-label">Meči</div></div>
-    <div class="stat"><div class="stat-num">5</div><div class="stat-label">Redkosti</div></div>
-    <div class="stat"><div class="stat-num">800+</div><div class="stat-label">Nivo vodnik</div></div>
+    <div class="stat"><div class="stat-num">41</div><div class="stat-label" data-sl="Sadeži">Fruits</div></div>
+    <div class="stat"><div class="stat-num">40</div><div class="stat-label" data-sl="Meči">Swords</div></div>
+    <div class="stat"><div class="stat-num">5</div><div class="stat-label" data-sl="Redkosti">Rarities</div></div>
+    <div class="stat"><div class="stat-num">800+</div><div class="stat-label" data-sl="Nivo vodnik">Level guide</div></div>
   </div>
 </section>
 
 <!-- LEVEL 800 -->
 <hr style="border:none;border-top:1px solid var(--border)">
 <div class="section" id="level">
-  <div class="section-title">🗺️ Vodnik za Nivo 800</div>
-  <p class="section-sub">Nivo 800 je prehod med Prvim in Drugim morjem — tukaj je vse kar moraš narediti</p>
+  <div class="section-title">🗺️ <span data-sl="Vodnik za Nivo 800">Level 800 Guide</span></div>
+  <p class="section-sub" data-sl="Nivo 800 je prehod med Prvim in Drugim morjem — tukaj je vse kar moraš narediti">Level 800 is the transition between Sea 1 and Sea 2 — here's everything you need to do</p>
   <div class="level-grid">
+
     <div class="level-card gold">
       <div class="level-card-icon">🌊</div>
-      <h3>Kje si pri nivoju 800?</h3>
-      <p>Pri nivoju 800 si na <strong>prehodu med 1. in 2. morjem</strong>. Priporoča se, da greš v 2. morje pri nivoju <strong>800–1000</strong>. Pred odhodom zgrindi do vsaj 775.</p>
+      <h3 data-sl="Kje si pri nivoju 800?">Where are you at level 800?</h3>
+      <p data-sl="Pri nivoju 800 si na &lt;strong&gt;prehodu med 1. in 2. morjem&lt;/strong&gt;. Priporoča se, da greš v 2. morje pri nivoju &lt;strong&gt;800–1000&lt;/strong&gt;. Pred odhodom zgrindi do vsaj 775.">At level 800 you're at the <strong>transition between Sea 1 and Sea 2</strong>. Recommended to move to Sea 2 at level <strong>800–1000</strong>. Farm to at least 775 before going.</p>
     </div>
+
     <div class="level-card purple">
       <div class="level-card-icon">🎯</div>
-      <h3>Kje grindati pri 800?</h3>
-      <p>Najboljše cone za nivo 800:</p>
+      <h3 data-sl="Kje grindati pri 800?">Where to grind at 800?</h3>
+      <p data-sl="Najboljše cone za nivo 800:">Best zones for level 800:</p>
       <ul>
-        <li><strong>Kingdom of Rose</strong> — nivoji 700–850</li>
-        <li><strong>Underwater City</strong> — nivoji 800–925</li>
-        <li><strong>Graveyard Island</strong> — nivoji 950–1000</li>
+        <li data-sl="&lt;strong&gt;Kingdom of Rose&lt;/strong&gt; — nivoji 700–850"><strong>Kingdom of Rose</strong> — levels 700–850</li>
+        <li data-sl="&lt;strong&gt;Underwater City&lt;/strong&gt; — nivoji 800–925"><strong>Underwater City</strong> — levels 800–925</li>
+        <li data-sl="&lt;strong&gt;Graveyard Island&lt;/strong&gt; — nivoji 950–1000"><strong>Graveyard Island</strong> — levels 950–1000</li>
       </ul>
     </div>
+
     <div class="level-card">
       <div class="level-card-icon">🍑</div>
-      <h3>Najboljši sadež za grind</h3>
-      <p><strong>Buddha</strong> je kralj za grindanje. Gigantska oblika = ogromen doseg vseh udarcev. <strong>+55% zmanjšanje škode</strong> pri prebujenemu. Hoja po vodi.</p>
+      <h3 data-sl="Najboljši sadež za grind">Best fruit for grinding</h3>
+      <p data-sl="&lt;strong&gt;Buddha&lt;/strong&gt; je kralj za grindanje. Gigantska oblika = ogromen doseg vseh udarcev. &lt;strong&gt;+55% zmanjšanje škode&lt;/strong&gt; pri prebujenemu. Hoja po vodi."><strong>Buddha</strong> is the king of grinding. Giant form = massive reach on all attacks. <strong>+55% damage reduction</strong> when awakened. Water walking.</p>
     </div>
+
     <div class="level-card green">
       <div class="level-card-icon">⚡</div>
-      <h3>Kaj odkleniti pri 800</h3>
+      <h3 data-sl="Kaj odkleniti pri 800">What to unlock at 800</h3>
       <ul>
-        <li>Aktiviraj <strong>Buso Haki</strong> (Oborožitev)</li>
-        <li>Začni iskati <strong>Meito</strong> meče (legendarno)</li>
-        <li>Zberi <strong>Fragments</strong> za prebujanje</li>
-        <li>Opravi quest za <strong>Saber Expert</strong></li>
-        <li>Poišči <strong>Poncho NPC</strong> za Instinct V2</li>
+        <li data-sl="Aktiviraj &lt;strong&gt;Buso Haki&lt;/strong&gt; (Oborožitev)">Activate <strong>Buso Haki</strong> (Armament)</li>
+        <li data-sl="Začni iskati &lt;strong&gt;Meito&lt;/strong&gt; meče (legendarno)">Start hunting <strong>Meito</strong> swords (legendary)</li>
+        <li data-sl="Zberi &lt;strong&gt;Fragments&lt;/strong&gt; za prebujanje">Collect <strong>Fragments</strong> for awakening</li>
+        <li data-sl="Opravi quest za &lt;strong&gt;Saber Expert&lt;/strong&gt;">Complete the <strong>Saber Expert</strong> quest</li>
+        <li data-sl="Poišči &lt;strong&gt;Poncho NPC&lt;/strong&gt; za Instinct V2">Find <strong>Poncho NPC</strong> for Instinct V2</li>
       </ul>
     </div>
+
     <div class="level-card">
       <div class="level-card-icon">🏆</div>
-      <h3>Prebujanje (Awakening)</h3>
-      <p>Ko zberš dovolj <strong>Fragments</strong>, prebudi sadež pri Coastal God. Prebujeni sadeži imajo <strong>bistveno boljše sposobnosti</strong>. Buddha prebujeni = +8x doseg udarcev!</p>
+      <h3 data-sl="Prebujanje (Awakening)">Awakening</h3>
+      <p data-sl="Ko zberš dovolj &lt;strong&gt;Fragments&lt;/strong&gt;, prebudi sadež pri Coastal God. Prebujeni sadeži imajo &lt;strong&gt;bistveno boljše sposobnosti&lt;/strong&gt;. Buddha prebujeni = +8x doseg udarcev!">Once you collect enough <strong>Fragments</strong>, awaken your fruit at Coastal God. Awakened fruits have <strong>massively better abilities</strong>. Buddha awakened = +8x attack reach!</p>
     </div>
+
     <div class="level-card purple">
       <div class="level-card-icon">💎</div>
-      <h3>Haki sistem</h3>
-      <p><strong>Buso Haki</strong> — trdi oklep, napadi delajo škodo Logia sadežnikom. Pridobi pri Ability Teacher.<br><strong>Ken Haki (Instinct)</strong> — izogibanje napadom, videnje skritih sovražnikov.</p>
+      <h3 data-sl="Haki sistem">Haki System</h3>
+      <p data-sl="&lt;strong&gt;Buso Haki&lt;/strong&gt; — trdi oklep, napadi delajo škodo Logia sadežnikom. Pridobi pri Ability Teacher.&lt;br&gt;&lt;strong&gt;Ken Haki (Instinct)&lt;/strong&gt; — izogibanje napadom, videnje skritih sovražnikov."><strong>Buso Haki</strong> — hard armor, attacks damage Logia fruit users. Get at Ability Teacher.<br><strong>Ken Haki (Instinct)</strong> — dodge attacks, see hidden enemies.</p>
     </div>
+
   </div>
   <div class="stat-build">
-    <h3>📊 Priporočena razporeditev statov (Sadežni main)</h3>
-    <div class="stat-row-bar"><span class="stat-name">Sadež</span><div class="stat-bar-bg"><div class="stat-bar-fill fill-fruit" style="width:100%"></div></div><span class="stat-val">3000 max</span></div>
-    <div class="stat-row-bar"><span class="stat-name">Obramba</span><div class="stat-bar-bg"><div class="stat-bar-fill fill-defense" style="width:100%"></div></div><span class="stat-val">3000 max</span></div>
+    <h3 data-sl="📊 Priporočena razporeditev statov (Sadežni main)">📊 Recommended stat distribution (Fruit main)</h3>
+    <div class="stat-row-bar"><span class="stat-name" data-sl="Sadež">Fruit</span><div class="stat-bar-bg"><div class="stat-bar-fill fill-fruit" style="width:100%"></div></div><span class="stat-val">3000 max</span></div>
+    <div class="stat-row-bar"><span class="stat-name" data-sl="Obramba">Defense</span><div class="stat-bar-bg"><div class="stat-bar-fill fill-defense" style="width:100%"></div></div><span class="stat-val">3000 max</span></div>
     <div class="stat-row-bar"><span class="stat-name">Melee</span><div class="stat-bar-bg"><div class="stat-bar-fill fill-melee" style="width:83%"></div></div><span class="stat-val">2500</span></div>
-    <div class="stat-row-bar"><span class="stat-name">Meč</span><div class="stat-bar-bg"><div class="stat-bar-fill fill-sword" style="width:17%"></div></div><span class="stat-val">500</span></div>
-    <div class="stat-row-bar"><span class="stat-name">Puška</span><div class="stat-bar-bg"><div class="stat-bar-fill fill-gun" style="width:0%"></div></div><span class="stat-val">0</span></div>
-    <div class="tip-box"><strong>Nasvet:</strong> 3 statne točke na nivo. Pri max nivoju 3000 imaš 9000 skupaj, vsak stat cap 3000. Za Mečni main: zamenjaj Sadež ↔ Meč.</div>
+    <div class="stat-row-bar"><span class="stat-name" data-sl="Meč">Sword</span><div class="stat-bar-bg"><div class="stat-bar-fill fill-sword" style="width:17%"></div></div><span class="stat-val">500</span></div>
+    <div class="stat-row-bar"><span class="stat-name" data-sl="Puška">Gun</span><div class="stat-bar-bg"><div class="stat-bar-fill fill-gun" style="width:0%"></div></div><span class="stat-val">0</span></div>
+    <div class="tip-box" data-sl="&lt;strong&gt;Nasvet:&lt;/strong&gt; 3 statne točke na nivo. Pri max nivoju 3000 imaš 9000 skupaj, vsak stat cap 3000. Za Mečni main: zamenjaj Sadež ↔ Meč."><strong>Tip:</strong> 3 stat points per level. At max level 3000 you have 9000 total, each stat cap 3000. For Sword main: swap Fruit ↔ Sword.</div>
   </div>
 </div>
 
 <!-- FRUITS -->
 <hr style="border:none;border-top:1px solid var(--border)">
 <div class="section" id="fruits">
-  <div class="section-title">🍎 Vsi Sadeži (41)</div>
-  <p class="section-sub">Filtriraj po redkosti. 3 tipe: Naravni · Elementarni · Zver</p>
+  <div class="section-title">🍎 <span data-sl="Vsi Sadeži (41)">All Fruits (41)</span></div>
+  <p class="section-sub" data-sl="Filtriraj po redkosti. 3 tipi: Naravni · Elementarni · Zver">Filter by rarity. 3 types: Natural · Elemental · Beast</p>
   <div class="tabs">
-    <button class="tab-btn active" onclick="filterFruits('all',this)">Vsi (41)</button>
-    <button class="tab-btn mythical" onclick="filterFruits('mythical',this)">⬛ Mitski (13)</button>
-    <button class="tab-btn legendary" onclick="filterFruits('legendary',this)">🟣 Legendarni (10)</button>
-    <button class="tab-btn rare" onclick="filterFruits('rare',this)">🔵 Redki (11)</button>
-    <button class="tab-btn uncommon" onclick="filterFruits('uncommon',this)">🟢 Neobičajni (4)</button>
-    <button class="tab-btn common" onclick="filterFruits('common',this)">⚪ Navadni (3)</button>
+    <button class="tab-btn active" onclick="filterFruits('all',this)" data-sl="Vsi (41)">All (41)</button>
+    <button class="tab-btn mythical" onclick="filterFruits('mythical',this)" data-sl="⬛ Mitski (13)">⬛ Mythical (13)</button>
+    <button class="tab-btn legendary" onclick="filterFruits('legendary',this)" data-sl="🟣 Legendarni (10)">🟣 Legendary (10)</button>
+    <button class="tab-btn rare" onclick="filterFruits('rare',this)" data-sl="🔵 Redki (11)">🔵 Rare (11)</button>
+    <button class="tab-btn uncommon" onclick="filterFruits('uncommon',this)" data-sl="🟢 Neobičajni (4)">🟢 Uncommon (4)</button>
+    <button class="tab-btn common" onclick="filterFruits('common',this)" data-sl="⚪ Navadni (3)">⚪ Common (3)</button>
   </div>
   <div class="fruit-grid" id="fruit-grid">
 
-    <!-- MYTHICAL 13 -->
+    <!-- MYTHICAL -->
     <div class="fruit-card mythical" data-rarity="mythical">
-      <div class="fruit-header"><div><div class="fruit-name">🐉 Dragon / Zmaj</div><div class="fruit-type">Zver · Mitski</div></div><div class="fruit-badges"><span class="badge badge-mythical">Mitski</span><span class="badge badge-beast">Zver</span></div></div>
-      <div class="fruit-desc">Preobraziš se v <strong>pravega zmaja</strong>. Letenje, dihanje ognja, oklop lusk, masivni AoE. <strong>Najboljši sadež v igri</strong> za PvE in PvP. Cena: 3,500,000 ali 2,600R$.</div>
-      <div class="fruit-uses"><span class="use-tag pvp">PvP</span><span class="use-tag pve">PvE</span><span class="use-tag fly">Let</span><span class="use-tag grind">Grind</span></div>
+      <div class="fruit-header"><div><div class="fruit-name">🐉 Dragon / Zmaj</div><div class="fruit-type" data-sl="Zver · Mitski">Beast · Mythical</div></div><div class="fruit-badges"><span class="badge badge-mythical" data-sl="Mitski">Mythical</span><span class="badge badge-beast" data-sl="Zver">Beast</span></div></div>
+      <div class="fruit-desc" data-sl="Preobraziš se v &lt;strong&gt;pravega zmaja&lt;/strong&gt;. Letenje, dihanje ognja, oklop lusk, masivni AoE. &lt;strong&gt;Najboljši sadež v igri&lt;/strong&gt; za PvE in PvP. Cena: 3.500.000 ali 2.600R$.">Transform into a <strong>real dragon</strong>. Flight, fire breath, scale armor, massive AoE. <strong>Best fruit in the game</strong> for PvE and PvP. Cost: 3,500,000 or 2,600R$.</div>
+      <div class="fruit-uses"><span class="use-tag pvp">PvP</span><span class="use-tag pve">PvE</span><span class="use-tag fly" data-sl="Let">Flight</span><span class="use-tag grind">Grind</span></div>
     </div>
 
     <div class="fruit-card mythical" data-rarity="mythical">
-      <div class="fruit-header"><div><div class="fruit-name">🦊 Kitsune / Lisica</div><div class="fruit-type">Zver · Mitski</div></div><div class="fruit-badges"><span class="badge badge-mythical">Mitski</span><span class="badge badge-beast">Zver</span></div></div>
-      <div class="fruit-desc">Duhovna <strong>lisica z devetimi repi</strong>. Taktično bojevanje, iluzije, hitre preobrazbe. Ena najmočnejših v <strong>meta 2026</strong>. Cena: 3,400,000 ali 2,550R$.</div>
-      <div class="fruit-uses"><span class="use-tag pvp">PvP</span><span class="use-tag fly">Let</span></div>
+      <div class="fruit-header"><div><div class="fruit-name">🦊 Kitsune</div><div class="fruit-type" data-sl="Zver · Mitski">Beast · Mythical</div></div><div class="fruit-badges"><span class="badge badge-mythical" data-sl="Mitski">Mythical</span><span class="badge badge-beast" data-sl="Zver">Beast</span></div></div>
+      <div class="fruit-desc" data-sl="Duhovna &lt;strong&gt;lisica z devetimi repi&lt;/strong&gt;. Taktično bojevanje, iluzije, hitre preobrazbe. Ena najmočnejših v &lt;strong&gt;meta 2026&lt;/strong&gt;. Cena: 3.400.000 ali 2.550R$.">Spiritual <strong>fox with nine tails</strong>. Tactical combat, illusions, fast transformations. One of the strongest in the <strong>2026 meta</strong>. Cost: 3,400,000 or 2,550R$.</div>
+      <div class="fruit-uses"><span class="use-tag pvp">PvP</span><span class="use-tag fly" data-sl="Let">Flight</span></div>
     </div>
 
     <div class="fruit-card mythical" data-rarity="mythical">
-      <div class="fruit-header"><div><div class="fruit-name">🐆 Leopard</div><div class="fruit-type">Zver · Mitski</div></div><div class="fruit-badges"><span class="badge badge-mythical">Mitski</span><span class="badge badge-beast">Zver</span></div></div>
-      <div class="fruit-desc">Preobrazba v leoparda — <strong>hiter, agilni, combo-orientiran</strong>. Idealen za agresivno PvP igranje. Eksplozivni hitri naboji, visoka mobilnost.</div>
+      <div class="fruit-header"><div><div class="fruit-name">🐆 Leopard</div><div class="fruit-type" data-sl="Zver · Mitski">Beast · Mythical</div></div><div class="fruit-badges"><span class="badge badge-mythical" data-sl="Mitski">Mythical</span><span class="badge badge-beast" data-sl="Zver">Beast</span></div></div>
+      <div class="fruit-desc" data-sl="Preobrazba v leoparda — &lt;strong&gt;hiter, agilni, combo-orientiran&lt;/strong&gt;. Idealen za agresivno PvP igranje. Eksplozivni hitri naboji, visoka mobilnost.">Leopard transformation — <strong>fast, agile, combo-oriented</strong>. Ideal for aggressive PvP. Explosive fast dashes, high mobility.</div>
       <div class="fruit-uses"><span class="use-tag pvp">PvP</span></div>
     </div>
 
     <div class="fruit-card mythical" data-rarity="mythical">
-      <div class="fruit-header"><div><div class="fruit-name">🍞 Dough / Testo</div><div class="fruit-type">Naravni · Mitski</div></div><div class="fruit-badges"><span class="badge badge-mythical">Mitski</span><span class="badge badge-natural">Naravni</span></div></div>
-      <div class="fruit-desc">Lepljivo testo ujame nasprotnike. <strong>Najboljši PvP sadež</strong> — dolgi napadi, visoka škoda, odlično sledenje. Combo igranje na vrhunski ravni.</div>
+      <div class="fruit-header"><div><div class="fruit-name">🍞 Dough / Testo</div><div class="fruit-type" data-sl="Naravni · Mitski">Natural · Mythical</div></div><div class="fruit-badges"><span class="badge badge-mythical" data-sl="Mitski">Mythical</span><span class="badge badge-natural" data-sl="Naravni">Natural</span></div></div>
+      <div class="fruit-desc" data-sl="Lepljivo testo ujame nasprotnike. &lt;strong&gt;Najboljši PvP sadež&lt;/strong&gt; — dolgi napadi, visoka škoda, odlično sledenje. Vrhunsko combo igranje.">Sticky dough traps enemies. <strong>Best PvP fruit</strong> — long attacks, high damage, excellent tracking. Top-tier combo play.</div>
       <div class="fruit-uses"><span class="use-tag pvp">PvP</span></div>
     </div>
 
     <div class="fruit-card mythical" data-rarity="mythical">
-      <div class="fruit-header"><div><div class="fruit-name">🌑 Shadow / Senca</div><div class="fruit-type">Naravni · Mitski</div></div><div class="fruit-badges"><span class="badge badge-mythical">Mitski</span><span class="badge badge-natural">Naravni</span></div></div>
-      <div class="fruit-desc">Manipulacija senc — <strong>zombie mode</strong> (oživiš padlega sovražnika), senčne rakete, teleportacija. Edinstven sadež z zombie mehaniko.</div>
+      <div class="fruit-header"><div><div class="fruit-name">🌑 Shadow / Senca</div><div class="fruit-type" data-sl="Naravni · Mitski">Natural · Mythical</div></div><div class="fruit-badges"><span class="badge badge-mythical" data-sl="Mitski">Mythical</span><span class="badge badge-natural" data-sl="Naravni">Natural</span></div></div>
+      <div class="fruit-desc" data-sl="Manipulacija senc — &lt;strong&gt;zombie mode&lt;/strong&gt; (oživiš padlega sovražnika), senčne rakete, teleportacija. Edinstven sadež z zombie mehaniko.">Shadow manipulation — <strong>zombie mode</strong> (revive a fallen enemy), shadow rockets, teleportation. Unique fruit with zombie mechanic.</div>
       <div class="fruit-uses"><span class="use-tag pvp">PvP</span><span class="use-tag pve">PvE</span></div>
     </div>
 
     <div class="fruit-card mythical" data-rarity="mythical">
-      <div class="fruit-header"><div><div class="fruit-name">☠️ Venom / Strup</div><div class="fruit-type">Naravni · Mitski</div></div><div class="fruit-badges"><span class="badge badge-mythical">Mitski</span><span class="badge badge-natural">Naravni</span></div></div>
-      <div class="fruit-desc">Strupeni oblak in DOT (škoda skozi čas). <strong>Odlično za obkrožitev sovražnikov</strong>. Zeleni strupeni val pokrije ogromno področje.</div>
+      <div class="fruit-header"><div><div class="fruit-name">☠️ Venom / Strup</div><div class="fruit-type" data-sl="Naravni · Mitski">Natural · Mythical</div></div><div class="fruit-badges"><span class="badge badge-mythical" data-sl="Mitski">Mythical</span><span class="badge badge-natural" data-sl="Naravni">Natural</span></div></div>
+      <div class="fruit-desc" data-sl="Strupeni oblak in DOT (škoda skozi čas). &lt;strong&gt;Odlično za obkrožitev sovražnikov&lt;/strong&gt;. Zeleni strupeni val pokrije ogromno področje.">Poison cloud and DoT (damage over time). <strong>Great for surrounding enemies</strong>. Green poison wave covers a huge area.</div>
       <div class="fruit-uses"><span class="use-tag pvp">PvP</span><span class="use-tag pve">PvE</span></div>
     </div>
 
     <div class="fruit-card mythical" data-rarity="mythical">
-      <div class="fruit-header"><div><div class="fruit-name">🔮 Control / Nadzor</div><div class="fruit-type">Naravni · Mitski</div></div><div class="fruit-badges"><span class="badge badge-mythical">Mitski</span><span class="badge badge-natural">Naravni</span></div></div>
-      <div class="fruit-desc"><strong>Kontrola prostora</strong> — premikanje nasprotnikov, ujetje v mehurčke, priklic. Visoko spretnostni sadež za izkušene igralce.</div>
+      <div class="fruit-header"><div><div class="fruit-name">🔮 Control / Nadzor</div><div class="fruit-type" data-sl="Naravni · Mitski">Natural · Mythical</div></div><div class="fruit-badges"><span class="badge badge-mythical" data-sl="Mitski">Mythical</span><span class="badge badge-natural" data-sl="Naravni">Natural</span></div></div>
+      <div class="fruit-desc" data-sl="&lt;strong&gt;Kontrola prostora&lt;/strong&gt; — premikanje nasprotnikov, ujetje v mehurčke, priklic. Visoko spretnostni sadež za izkušene igralce."><strong>Space control</strong> — move enemies, trap in bubbles, pull. High-skill fruit that rewards experienced players.</div>
       <div class="fruit-uses"><span class="use-tag pvp">PvP</span></div>
     </div>
 
     <div class="fruit-card mythical" data-rarity="mythical">
-      <div class="fruit-header"><div><div class="fruit-name">👻 Spirit / Duh</div><div class="fruit-type">Naravni · Mitski</div></div><div class="fruit-badges"><span class="badge badge-mythical">Mitski</span><span class="badge badge-natural">Naravni</span></div></div>
-      <div class="fruit-desc">Duhovna moč — <strong>leteč duh avatar</strong>, naboji duhovne energije, visoka mobilnost. Eden redkejših mitskih sadeži z unikatno estetiko.</div>
-      <div class="fruit-uses"><span class="use-tag pvp">PvP</span><span class="use-tag fly">Let</span></div>
+      <div class="fruit-header"><div><div class="fruit-name">👻 Spirit / Duh</div><div class="fruit-type" data-sl="Naravni · Mitski">Natural · Mythical</div></div><div class="fruit-badges"><span class="badge badge-mythical" data-sl="Mitski">Mythical</span><span class="badge badge-natural" data-sl="Naravni">Natural</span></div></div>
+      <div class="fruit-desc" data-sl="Duhovna moč — &lt;strong&gt;leteč duh avatar&lt;/strong&gt;, naboji duhovne energije, visoka mobilnost. Eden redkejših mitskih sadeži z unikatno estetiko.">Spiritual power — <strong>flying spirit avatar</strong>, spirit energy blasts, high mobility. One of the rarer mythical fruits with unique aesthetics.</div>
+      <div class="fruit-uses"><span class="use-tag pvp">PvP</span><span class="use-tag fly" data-sl="Let">Flight</span></div>
     </div>
 
     <div class="fruit-card mythical" data-rarity="mythical">
-      <div class="fruit-header"><div><div class="fruit-name">🌌 Gravity / Gravitacija</div><div class="fruit-type">Naravni · Mitski</div></div><div class="fruit-badges"><span class="badge badge-mythical">Mitski</span><span class="badge badge-natural">Naravni</span></div></div>
-      <div class="fruit-desc">Kontrola gravitacije — dviganje objektov, sprememba smeri sile, dvig nasprotnikov. <strong>Masiven AOE</strong> pri kombinacijah. Napadi prodirajo skozi Logia.</div>
+      <div class="fruit-header"><div><div class="fruit-name">🌌 Gravity / Gravitacija</div><div class="fruit-type" data-sl="Naravni · Mitski">Natural · Mythical</div></div><div class="fruit-badges"><span class="badge badge-mythical" data-sl="Mitski">Mythical</span><span class="badge badge-natural" data-sl="Naravni">Natural</span></div></div>
+      <div class="fruit-desc" data-sl="Kontrola gravitacije — dviganje objektov, sprememba smeri sile, dvig nasprotnikov. &lt;strong&gt;Masiven AOE&lt;/strong&gt; v kombinacijah. Napadi prodirajo skozi Logia imunost.">Gravity control — lift objects, change force direction, raise enemies into the air. <strong>Massive AoE</strong> in combos. Attacks pierce Logia immunity.</div>
       <div class="fruit-uses"><span class="use-tag pvp">PvP</span><span class="use-tag pve">PvE</span></div>
     </div>
 
     <div class="fruit-card mythical" data-rarity="mythical">
-      <div class="fruit-header"><div><div class="fruit-name">🦣 Mammoth / Mamut</div><div class="fruit-type">Zver · Mitski</div></div><div class="fruit-badges"><span class="badge badge-mythical">Mitski</span><span class="badge badge-beast">Zver</span></div></div>
-      <div class="fruit-desc">Preobrazba v <strong>gigantskega mamuta</strong>. Trdna obramba, masivna škoda, podiranje nasprotnikov. Odlično za grind.</div>
+      <div class="fruit-header"><div><div class="fruit-name">🦣 Mammoth / Mamut</div><div class="fruit-type" data-sl="Zver · Mitski">Beast · Mythical</div></div><div class="fruit-badges"><span class="badge badge-mythical" data-sl="Mitski">Mythical</span><span class="badge badge-beast" data-sl="Zver">Beast</span></div></div>
+      <div class="fruit-desc" data-sl="Preobrazba v &lt;strong&gt;gigantskega mamuta&lt;/strong&gt;. Trdna obramba, masivna škoda, podiranje nasprotnikov. Odlično za grind.">Transform into a <strong>giant mammoth</strong>. Tough defense, massive damage, knock enemies down. Great for grinding.</div>
       <div class="fruit-uses"><span class="use-tag pve">PvE</span><span class="use-tag grind">Grind</span></div>
     </div>
 
     <div class="fruit-card mythical" data-rarity="mythical">
-      <div class="fruit-header"><div><div class="fruit-name">🦕 T-Rex</div><div class="fruit-type">Zver · Mitski</div></div><div class="fruit-badges"><span class="badge badge-mythical">Mitski</span><span class="badge badge-beast">Zver</span></div></div>
-      <div class="fruit-desc">Preobrazba v T-Rexa — <strong>grizenje, tramplanje, rjovenje</strong>. Enormna melee škoda v živalski obliki. Zabaven sadež.</div>
+      <div class="fruit-header"><div><div class="fruit-name">🦕 T-Rex</div><div class="fruit-type" data-sl="Zver · Mitski">Beast · Mythical</div></div><div class="fruit-badges"><span class="badge badge-mythical" data-sl="Mitski">Mythical</span><span class="badge badge-beast" data-sl="Zver">Beast</span></div></div>
+      <div class="fruit-desc" data-sl="Preobrazba v T-Rexa — &lt;strong&gt;grizenje, tramplanje, rjovenje&lt;/strong&gt;. Enormna melee škoda v živalski obliki. Zabaven sadež.">T-Rex transformation — <strong>bite, stomp, roar</strong>. Enormous melee damage in beast form. A fun fruit with high raw power.</div>
       <div class="fruit-uses"><span class="use-tag pve">PvE</span></div>
     </div>
 
     <div class="fruit-card mythical" data-rarity="mythical">
-      <div class="fruit-header"><div><div class="fruit-name">🐯 Tiger</div><div class="fruit-type">Zver · Mitski</div></div><div class="fruit-badges"><span class="badge badge-mythical">Mitski</span><span class="badge badge-beast">Zver</span></div></div>
-      <div class="fruit-desc">Tigrova preobrazba — <strong>hitri praskci, skoki, rjovenje</strong>. Dobra mobilnost. Primerljiv z Leopardom, bolj obrambno orientiran.</div>
+      <div class="fruit-header"><div><div class="fruit-name">🐯 Tiger</div><div class="fruit-type" data-sl="Zver · Mitski">Beast · Mythical</div></div><div class="fruit-badges"><span class="badge badge-mythical" data-sl="Mitski">Mythical</span><span class="badge badge-beast" data-sl="Zver">Beast</span></div></div>
+      <div class="fruit-desc" data-sl="Tigrova preobrazba — &lt;strong&gt;hitri praskci, skoki, rjovenje&lt;/strong&gt;. Dobra mobilnost. Primerljiv z Leopardom, bolj obrambno orientiran.">Tiger transformation — <strong>fast claws, jumps, roar</strong>. Good mobility. Similar to Leopard but more defense-oriented.</div>
       <div class="fruit-uses"><span class="use-tag pvp">PvP</span><span class="use-tag pve">PvE</span></div>
     </div>
 
     <div class="fruit-card mythical" data-rarity="mythical">
-      <div class="fruit-header"><div><div class="fruit-name">❄️ Yeti / Snežak</div><div class="fruit-type">Zver · Mitski</div></div><div class="fruit-badges"><span class="badge badge-mythical">Mitski</span><span class="badge badge-beast">Zver</span></div></div>
-      <div class="fruit-desc">Ledeni div — <strong>zamrznitev, ledeni udarci, snežni val</strong>. Kombinacija surove moči in ledenega kontrola. Dober PvP sadež.</div>
+      <div class="fruit-header"><div><div class="fruit-name">❄️ Yeti / Snežak</div><div class="fruit-type" data-sl="Zver · Mitski">Beast · Mythical</div></div><div class="fruit-badges"><span class="badge badge-mythical" data-sl="Mitski">Mythical</span><span class="badge badge-beast" data-sl="Zver">Beast</span></div></div>
+      <div class="fruit-desc" data-sl="Ledeni div — &lt;strong&gt;zamrznitev, ledeni udarci, snežni val&lt;/strong&gt;. Kombinacija surove moči in ledenega kontrola. Dober PvP sadež.">Ice giant — <strong>freeze, ice strikes, snow wave</strong>. Combination of raw power and ice control. Good PvP fruit.</div>
       <div class="fruit-uses"><span class="use-tag pvp">PvP</span><span class="use-tag pve">PvE</span></div>
     </div>
 
-    <!-- LEGENDARY 10 -->
+    <!-- LEGENDARY -->
     <div class="fruit-card legendary" data-rarity="legendary">
-      <div class="fruit-header"><div><div class="fruit-name">☯️ Buddha / Buda</div><div class="fruit-type">Naravni · Legendarni</div></div><div class="fruit-badges"><span class="badge badge-legendary">Legendarni</span><span class="badge badge-natural">Naravni</span></div></div>
-      <div class="fruit-desc"><strong>Najboljši sadež za grindanje.</strong> Gigantska oblika → 8x večji doseg mečnih udarcev. +55% zmanjšanje škode (prebujeni). Hoja po vodi. Cena: 1,200,000 ali 1,650R$.</div>
+      <div class="fruit-header"><div><div class="fruit-name">☯️ Buddha / Buda</div><div class="fruit-type" data-sl="Naravni · Legendarni">Natural · Legendary</div></div><div class="fruit-badges"><span class="badge badge-legendary" data-sl="Legendarni">Legendary</span><span class="badge badge-natural" data-sl="Naravni">Natural</span></div></div>
+      <div class="fruit-desc" data-sl="&lt;strong&gt;Najboljši sadež za grindanje.&lt;/strong&gt; Gigantska oblika → 8x večji doseg mečnih udarcev. +55% zmanjšanje škode (prebujeni). Hoja po vodi. Cena: 1.200.000 ali 1.650R$."><strong>Best fruit for grinding.</strong> Giant form → 8x greater sword attack reach. +55% damage reduction (awakened). Water walking. Cost: 1,200,000 or 1,650R$.</div>
       <div class="fruit-uses"><span class="use-tag grind">Grind</span><span class="use-tag pve">PvE</span></div>
     </div>
 
     <div class="fruit-card legendary" data-rarity="legendary">
-      <div class="fruit-header"><div><div class="fruit-name">🌀 Portal</div><div class="fruit-type">Naravni · Legendarni</div></div><div class="fruit-badges"><span class="badge badge-legendary">Legendarni</span><span class="badge badge-natural">Naravni</span></div></div>
-      <div class="fruit-desc"><strong>Najboljša mobilnost v igri</strong> — postavljanje portalov, takojšnja teleportacija. Kralj za PvP umike, iskanje sovražnikov in grind hitrost.</div>
+      <div class="fruit-header"><div><div class="fruit-name">🌀 Portal</div><div class="fruit-type" data-sl="Naravni · Legendarni">Natural · Legendary</div></div><div class="fruit-badges"><span class="badge badge-legendary" data-sl="Legendarni">Legendary</span><span class="badge badge-natural" data-sl="Naravni">Natural</span></div></div>
+      <div class="fruit-desc" data-sl="&lt;strong&gt;Najboljša mobilnost v igri&lt;/strong&gt; — postavljanje portalov, takojšnja teleportacija. Kralj za PvP umike, iskanje sovražnikov in hitrost grinda."><strong>Best mobility in the game</strong> — portal placement, instant teleportation. King for PvP escapes, enemy hunting, and grind speed.</div>
       <div class="fruit-uses"><span class="use-tag pvp">PvP</span><span class="use-tag grind">Grind</span></div>
     </div>
 
     <div class="fruit-card legendary" data-rarity="legendary">
-      <div class="fruit-header"><div><div class="fruit-name">⚡ Rumble / Strela</div><div class="fruit-type">Elementarni · Legendarni</div></div><div class="fruit-badges"><span class="badge badge-legendary">Legendarni</span><span class="badge badge-elemental">Elementarni</span></div></div>
-      <div class="fruit-desc">Kontrola strele — <strong>Logia imunost</strong> na fizične napade. Bliski udari, gromovi, električna obleka. Let. Odlična PvP ofenziva.</div>
-      <div class="fruit-uses"><span class="use-tag pvp">PvP</span><span class="use-tag fly">Let</span></div>
+      <div class="fruit-header"><div><div class="fruit-name">⚡ Rumble / Strela</div><div class="fruit-type" data-sl="Elementarni · Legendarni">Elemental · Legendary</div></div><div class="fruit-badges"><span class="badge badge-legendary" data-sl="Legendarni">Legendary</span><span class="badge badge-elemental" data-sl="Elementarni">Elemental</span></div></div>
+      <div class="fruit-desc" data-sl="Kontrola strele — &lt;strong&gt;Logia imunost&lt;/strong&gt; na fizične napade. Bliski udari, gromovi, električna obleka. Let. Odlična PvP ofenziva.">Lightning control — <strong>Logia immunity</strong> to physical attacks. Lightning strikes, thunder, electric coat. Flight. Great PvP offense.</div>
+      <div class="fruit-uses"><span class="use-tag pvp">PvP</span><span class="use-tag fly" data-sl="Let">Flight</span></div>
     </div>
 
     <div class="fruit-card legendary" data-rarity="legendary">
-      <div class="fruit-header"><div><div class="fruit-name">💥 Quake / Potres</div><div class="fruit-type">Naravni · Legendarni</div></div><div class="fruit-badges"><span class="badge badge-legendary">Legendarni</span><span class="badge badge-natural">Naravni</span></div></div>
-      <div class="fruit-desc">Tresenje tal, <strong>cunami, seizmični val</strong>. Ogromna AOE škoda. Posebnost: napadi <strong>prodirajo skozi Logia imunost</strong>. Top PvE sadež.</div>
+      <div class="fruit-header"><div><div class="fruit-name">💥 Quake / Potres</div><div class="fruit-type" data-sl="Naravni · Legendarni">Natural · Legendary</div></div><div class="fruit-badges"><span class="badge badge-legendary" data-sl="Legendarni">Legendary</span><span class="badge badge-natural" data-sl="Naravni">Natural</span></div></div>
+      <div class="fruit-desc" data-sl="Tresenje tal, &lt;strong&gt;cunami, seizmični val&lt;/strong&gt;. Ogromna AOE škoda. Posebnost: napadi &lt;strong&gt;prodirajo skozi Logia imunost&lt;/strong&gt;. Vrhunski PvE sadež.">Earthquake, <strong>tsunami, seismic wave</strong>. Massive AoE damage. Special: attacks <strong>pierce Logia immunity</strong>. Top PvE fruit.</div>
       <div class="fruit-uses"><span class="use-tag pve">PvE</span><span class="use-tag pvp">PvP</span></div>
     </div>
 
     <div class="fruit-card legendary" data-rarity="legendary">
-      <div class="fruit-header"><div><div class="fruit-name">🔥 Phoenix / Feniks</div><div class="fruit-type">Zver · Legendarni</div></div><div class="fruit-badges"><span class="badge badge-legendary">Legendarni</span><span class="badge badge-beast">Zver</span></div></div>
-      <div class="fruit-desc">Preobrazba v feniksa — <strong>zdravljenje sebe in zaveznikov, ognjen let</strong>. Edinstven healing sadež, idealen za timsko igro ali dolgo grindanje.</div>
-      <div class="fruit-uses"><span class="use-tag grind">Grind</span><span class="use-tag fly">Let</span></div>
+      <div class="fruit-header"><div><div class="fruit-name">🔥 Phoenix / Feniks</div><div class="fruit-type" data-sl="Zver · Legendarni">Beast · Legendary</div></div><div class="fruit-badges"><span class="badge badge-legendary" data-sl="Legendarni">Legendary</span><span class="badge badge-beast" data-sl="Zver">Beast</span></div></div>
+      <div class="fruit-desc" data-sl="Preobrazba v feniksa — &lt;strong&gt;zdravljenje sebe in zaveznikov, ognjen let&lt;/strong&gt;. Edinstven healing sadež, idealen za timsko igro ali dolgo grindanje.">Phoenix transformation — <strong>heal self and allies, fiery flight</strong>. Unique healing fruit, ideal for team play or long grinding.</div>
+      <div class="fruit-uses"><span class="use-tag grind">Grind</span><span class="use-tag fly" data-sl="Let">Flight</span></div>
     </div>
 
     <div class="fruit-card legendary" data-rarity="legendary">
-      <div class="fruit-header"><div><div class="fruit-name">💜 Love / Ljubezen</div><div class="fruit-type">Naravni · Legendarni</div></div><div class="fruit-badges"><span class="badge badge-legendary">Legendarni</span><span class="badge badge-natural">Naravni</span></div></div>
-      <div class="fruit-desc"><strong>Hipnoza sovražnikov</strong> — prisili jih da se borijo za tebe! Srčne bombe, privlačnost. Unikatna kontrolna mehanika, odlična pri bossih.</div>
+      <div class="fruit-header"><div><div class="fruit-name">💜 Love / Ljubezen</div><div class="fruit-type" data-sl="Naravni · Legendarni">Natural · Legendary</div></div><div class="fruit-badges"><span class="badge badge-legendary" data-sl="Legendarni">Legendary</span><span class="badge badge-natural" data-sl="Naravni">Natural</span></div></div>
+      <div class="fruit-desc" data-sl="&lt;strong&gt;Hipnoza sovražnikov&lt;/strong&gt; — prisili jih da se borijo za tebe! Srčne bombe, privlačnost. Unikatna kontrolna mehanika, odlična pri bossih."><strong>Hypnotize enemies</strong> — force them to fight for you! Heart bombs, attraction. Unique control mechanic, great on bosses.</div>
       <div class="fruit-uses"><span class="use-tag pve">PvE</span><span class="use-tag pvp">PvP</span></div>
     </div>
 
     <div class="fruit-card legendary" data-rarity="legendary">
-      <div class="fruit-header"><div><div class="fruit-name">🕷️ Spider / Pajek</div><div class="fruit-type">Naravni · Legendarni</div></div><div class="fruit-badges"><span class="badge badge-legendary">Legendarni</span><span class="badge badge-natural">Naravni</span></div></div>
-      <div class="fruit-desc">Pajkova mreža — <strong>ujetje in imobilizacija</strong>, plezanje po stenah, visoka mobilnost. Zabaven PvP sadež za combo igranje.</div>
+      <div class="fruit-header"><div><div class="fruit-name">🕷️ Spider / Pajek</div><div class="fruit-type" data-sl="Naravni · Legendarni">Natural · Legendary</div></div><div class="fruit-badges"><span class="badge badge-legendary" data-sl="Legendarni">Legendary</span><span class="badge badge-natural" data-sl="Naravni">Natural</span></div></div>
+      <div class="fruit-desc" data-sl="Pajkova mreža — &lt;strong&gt;ujetje in imobilizacija&lt;/strong&gt;, plezanje po stenah, visoka mobilnost. Zabaven PvP sadež za combo igranje.">Spider web — <strong>trap and immobilize enemies</strong>, wall climbing, high mobility. Fun PvP fruit for combo play.</div>
       <div class="fruit-uses"><span class="use-tag pvp">PvP</span></div>
     </div>
 
     <div class="fruit-card legendary" data-rarity="legendary">
-      <div class="fruit-header"><div><div class="fruit-name">🎵 Sound / Zvok</div><div class="fruit-type">Naravni · Legendarni</div></div><div class="fruit-badges"><span class="badge badge-legendary">Legendarni</span><span class="badge badge-natural">Naravni</span></div></div>
-      <div class="fruit-desc"><strong>Zvočni valovi in eksplozije</strong> — glasbena bomba, udarni val. Dober doseg, unikatni glasbeni napadi. Zabaven in efektiven.</div>
+      <div class="fruit-header"><div><div class="fruit-name">🎵 Sound / Zvok</div><div class="fruit-type" data-sl="Naravni · Legendarni">Natural · Legendary</div></div><div class="fruit-badges"><span class="badge badge-legendary" data-sl="Legendarni">Legendary</span><span class="badge badge-natural" data-sl="Naravni">Natural</span></div></div>
+      <div class="fruit-desc" data-sl="&lt;strong&gt;Zvočni valovi in eksplozije&lt;/strong&gt; — glasbena bomba, udarni val. Dober doseg, unikatni glasbeni napadi."><strong>Sound waves and explosions</strong> — music bomb, shockwave. Good range, unique musical attacks.</div>
       <div class="fruit-uses"><span class="use-tag pvp">PvP</span><span class="use-tag pve">PvE</span></div>
     </div>
 
     <div class="fruit-card legendary" data-rarity="legendary">
-      <div class="fruit-header"><div><div class="fruit-name">😣 Pain / Bolečina</div><div class="fruit-type">Naravni · Legendarni</div></div><div class="fruit-badges"><span class="badge badge-legendary">Legendarni</span><span class="badge badge-natural">Naravni</span></div></div>
-      <div class="fruit-desc"><strong>Prenos bolečine</strong> — škoda ki jo sprejmejo se prenaša nazaj na napadalca. Pasivni odboj + aktivni napadi. Odlično za tanke.</div>
+      <div class="fruit-header"><div><div class="fruit-name">😣 Pain / Bolečina</div><div class="fruit-type" data-sl="Naravni · Legendarni">Natural · Legendary</div></div><div class="fruit-badges"><span class="badge badge-legendary" data-sl="Legendarni">Legendary</span><span class="badge badge-natural" data-sl="Naravni">Natural</span></div></div>
+      <div class="fruit-desc" data-sl="&lt;strong&gt;Prenos bolečine&lt;/strong&gt; — škoda ki jo sprejmejo se prenaša nazaj na napadalca. Pasivni odboj + aktivni napadi. Odlično za tanke."><strong>Pain transfer</strong> — damage received is reflected back to the attacker. Passive reflect + active pain attacks. Great for tanks.</div>
       <div class="fruit-uses"><span class="use-tag pvp">PvP</span></div>
     </div>
 
     <div class="fruit-card legendary" data-rarity="legendary">
-      <div class="fruit-header"><div><div class="fruit-name">🌨️ Blizzard / Snežna nevihta</div><div class="fruit-type">Elementarni · Legendarni</div></div><div class="fruit-badges"><span class="badge badge-legendary">Legendarni</span><span class="badge badge-elemental">Elementarni</span></div></div>
-      <div class="fruit-desc">Mrzla snežna nevihta — <strong>upočasnitev, zamrznitev, ledeni tornado</strong>. Logia imunost. Masiven AOE, dober v skupinskih bojih.</div>
+      <div class="fruit-header"><div><div class="fruit-name">🌨️ Blizzard / Snežna nevihta</div><div class="fruit-type" data-sl="Elementarni · Legendarni">Elemental · Legendary</div></div><div class="fruit-badges"><span class="badge badge-legendary" data-sl="Legendarni">Legendary</span><span class="badge badge-elemental" data-sl="Elementarni">Elemental</span></div></div>
+      <div class="fruit-desc" data-sl="Mrzla snežna nevihta — &lt;strong&gt;upočasnitev, zamrznitev, ledeni tornado&lt;/strong&gt;. Logia imunost. Masiven AOE, dober v skupinskih bojih.">Cold snowstorm — <strong>slow, freeze, ice tornado</strong>. Logia immunity. Massive AoE, great in group fights.</div>
       <div class="fruit-uses"><span class="use-tag pvp">PvP</span><span class="use-tag pve">PvE</span></div>
     </div>
 
-    <!-- RARE 11 -->
+    <!-- RARE -->
     <div class="fruit-card rare" data-rarity="rare">
-      <div class="fruit-header"><div><div class="fruit-name">💡 Light / Svetloba</div><div class="fruit-type">Elementarni · Redki</div></div><div class="fruit-badges"><span class="badge badge-rare">Redki</span><span class="badge badge-elemental">Elementarni</span></div></div>
-      <div class="fruit-desc"><strong>Hitrost svetlobe</strong> — najhitrejši sadež v igri. Svetlobni laser, let, Logia imunost. Odličen za PvP in hitro premikanje po mapi.</div>
-      <div class="fruit-uses"><span class="use-tag pvp">PvP</span><span class="use-tag fly">Let</span></div>
+      <div class="fruit-header"><div><div class="fruit-name">💡 Light / Svetloba</div><div class="fruit-type" data-sl="Elementarni · Redki">Elemental · Rare</div></div><div class="fruit-badges"><span class="badge badge-rare" data-sl="Redki">Rare</span><span class="badge badge-elemental" data-sl="Elementarni">Elemental</span></div></div>
+      <div class="fruit-desc" data-sl="&lt;strong&gt;Hitrost svetlobe&lt;/strong&gt; — najhitrejši sadež v igri. Svetlobni laser, let, Logia imunost. Odličen za PvP in hitro premikanje po mapi."><strong>Speed of light</strong> — fastest fruit in the game. Light laser, flight, Logia immunity. Excellent for PvP and fast map travel.</div>
+      <div class="fruit-uses"><span class="use-tag pvp">PvP</span><span class="use-tag fly" data-sl="Let">Flight</span></div>
     </div>
 
     <div class="fruit-card rare" data-rarity="rare">
-      <div class="fruit-header"><div><div class="fruit-name">🔥 Flame / Plamen</div><div class="fruit-type">Elementarni · Redki</div></div><div class="fruit-badges"><span class="badge badge-rare">Redki</span><span class="badge badge-elemental">Elementarni</span></div></div>
-      <div class="fruit-desc">Ognjena elementarna moč — <strong>Logia imunost</strong>, ognjeni valovi, eksplozije. Eden prvih in najbolj zanesljivih sadeži za grindanje. Priporoča se za začetnike.</div>
+      <div class="fruit-header"><div><div class="fruit-name">🔥 Flame / Plamen</div><div class="fruit-type" data-sl="Elementarni · Redki">Elemental · Rare</div></div><div class="fruit-badges"><span class="badge badge-rare" data-sl="Redki">Rare</span><span class="badge badge-elemental" data-sl="Elementarni">Elemental</span></div></div>
+      <div class="fruit-desc" data-sl="Ognjena elementarna moč — &lt;strong&gt;Logia imunost&lt;/strong&gt;, ognjeni valovi, eksplozije. Eden prvih zanesljivih sadeži za grindanje. Priporoča se za začetnike.">Fire elemental — <strong>Logia immunity</strong>, fire waves, explosions. One of the first reliable grinding fruits. Recommended for beginners.</div>
       <div class="fruit-uses"><span class="use-tag grind">Grind</span><span class="use-tag pve">PvE</span></div>
     </div>
 
     <div class="fruit-card rare" data-rarity="rare">
-      <div class="fruit-header"><div><div class="fruit-name">🧊 Ice / Led</div><div class="fruit-type">Elementarni · Redki</div></div><div class="fruit-badges"><span class="badge badge-rare">Redki</span><span class="badge badge-elemental">Elementarni</span></div></div>
-      <div class="fruit-desc"><strong>Zamrznitev nasprotnikov</strong>. Logia imunost. Izjemna kombinacija z Gravity Blade mečem v PvP-ju — led + gravitacijski pull = zajetje.</div>
+      <div class="fruit-header"><div><div class="fruit-name">🧊 Ice / Led</div><div class="fruit-type" data-sl="Elementarni · Redki">Elemental · Rare</div></div><div class="fruit-badges"><span class="badge badge-rare" data-sl="Redki">Rare</span><span class="badge badge-elemental" data-sl="Elementarni">Elemental</span></div></div>
+      <div class="fruit-desc" data-sl="&lt;strong&gt;Zamrznitev nasprotnikov&lt;/strong&gt;. Logia imunost. Odlična kombinacija z Gravity Blade mečem v PvP-ju — led + gravitacijski pull = zajetje."><strong>Freeze enemies</strong>. Logia immunity. Excellent combo with Gravity Blade sword in PvP — ice + gravity pull = capture.</div>
       <div class="fruit-uses"><span class="use-tag pvp">PvP</span><span class="use-tag grind">Grind</span></div>
     </div>
 
     <div class="fruit-card rare" data-rarity="rare">
-      <div class="fruit-header"><div><div class="fruit-name">🏜️ Sand / Pesek</div><div class="fruit-type">Elementarni · Redki</div></div><div class="fruit-badges"><span class="badge badge-rare">Redki</span><span class="badge badge-elemental">Elementarni</span></div></div>
-      <div class="fruit-desc">Peščeni vihri — <strong>dehidracija, peščeni tornado</strong>. Logia imunost. Soliden AoE sadež za vmesne nivoje.</div>
+      <div class="fruit-header"><div><div class="fruit-name">🏜️ Sand / Pesek</div><div class="fruit-type" data-sl="Elementarni · Redki">Elemental · Rare</div></div><div class="fruit-badges"><span class="badge badge-rare" data-sl="Redki">Rare</span><span class="badge badge-elemental" data-sl="Elementarni">Elemental</span></div></div>
+      <div class="fruit-desc" data-sl="Peščeni vihri — &lt;strong&gt;dehidracija, peščeni tornado&lt;/strong&gt;. Logia imunost. Soliden AoE sadež za vmesne nivoje.">Sand storms — <strong>dehydration, sand tornado</strong>. Logia immunity. Solid AoE fruit for mid levels.</div>
       <div class="fruit-uses"><span class="use-tag grind">Grind</span><span class="use-tag pve">PvE</span></div>
     </div>
 
     <div class="fruit-card rare" data-rarity="rare">
-      <div class="fruit-header"><div><div class="fruit-name">🌫️ Smoke / Dim</div><div class="fruit-type">Elementarni · Redki</div></div><div class="fruit-badges"><span class="badge badge-rare">Redki</span><span class="badge badge-elemental">Elementarni</span></div></div>
-      <div class="fruit-desc">Dimna zavesa — <strong>skrivanje in beg</strong>. Logia imunost. Taktičen sadež za izogibanje napadom in presenečenja.</div>
+      <div class="fruit-header"><div><div class="fruit-name">🌫️ Smoke / Dim</div><div class="fruit-type" data-sl="Elementarni · Redki">Elemental · Rare</div></div><div class="fruit-badges"><span class="badge badge-rare" data-sl="Redki">Rare</span><span class="badge badge-elemental" data-sl="Elementarni">Elemental</span></div></div>
+      <div class="fruit-desc" data-sl="Dimna zavesa — &lt;strong&gt;skrivanje in beg&lt;/strong&gt;. Logia imunost. Taktičen sadež za izogibanje in presenečenja.">Smoke screen — <strong>hiding and escape</strong>. Logia immunity. Tactical fruit for dodging attacks and surprise plays.</div>
       <div class="fruit-uses"><span class="use-tag pvp">PvP</span></div>
     </div>
 
     <div class="fruit-card rare" data-rarity="rare">
-      <div class="fruit-header"><div><div class="fruit-name">🌙 Dark / Tema</div><div class="fruit-type">Elementarni · Redki</div></div><div class="fruit-badges"><span class="badge badge-rare">Redki</span><span class="badge badge-elemental">Elementarni</span></div></div>
-      <div class="fruit-desc"><strong>Temna gravitacijska energija</strong> — privlači nasprotnike, masivni črni val. Logia imunost. Posebnost: pritegne sovražnike kot gravitacija.</div>
+      <div class="fruit-header"><div><div class="fruit-name">🌙 Dark / Tema</div><div class="fruit-type" data-sl="Elementarni · Redki">Elemental · Rare</div></div><div class="fruit-badges"><span class="badge badge-rare" data-sl="Redki">Rare</span><span class="badge badge-elemental" data-sl="Elementarni">Elemental</span></div></div>
+      <div class="fruit-desc" data-sl="&lt;strong&gt;Temna gravitacijska energija&lt;/strong&gt; — privlači nasprotnike, masivni črni val. Logia imunost. Posebnost: pritegne sovražnike kot gravitacija."><strong>Dark gravitational energy</strong> — attract enemies, massive black wave. Logia immunity. Special: pulls enemies like gravity.</div>
       <div class="fruit-uses"><span class="use-tag pvp">PvP</span><span class="use-tag pve">PvE</span></div>
     </div>
 
     <div class="fruit-card rare" data-rarity="rare">
-      <div class="fruit-header"><div><div class="fruit-name">💎 Diamond / Diamant</div><div class="fruit-type">Naravni · Redki</div></div><div class="fruit-badges"><span class="badge badge-rare">Redki</span><span class="badge badge-natural">Naravni</span></div></div>
-      <div class="fruit-desc"><strong>Diamantni oklep</strong> — enormna obramba, odbijanje napadov, diamantni udarci. Specialist za tanke ki prenesejo vse.</div>
+      <div class="fruit-header"><div><div class="fruit-name">💎 Diamond / Diamant</div><div class="fruit-type" data-sl="Naravni · Redki">Natural · Rare</div></div><div class="fruit-badges"><span class="badge badge-rare" data-sl="Redki">Rare</span><span class="badge badge-natural" data-sl="Naravni">Natural</span></div></div>
+      <div class="fruit-desc" data-sl="&lt;strong&gt;Diamantni oklep&lt;/strong&gt; — enormna obramba, odbijanje napadov, diamantni udarci. Specialist za tanke."><strong>Diamond armor</strong> — enormous defense, deflect attacks, diamond strikes. Tank specialist.</div>
       <div class="fruit-uses"><span class="use-tag pve">PvE</span></div>
     </div>
 
     <div class="fruit-card rare" data-rarity="rare">
-      <div class="fruit-header"><div><div class="fruit-name">🪃 Rubber / Guma</div><div class="fruit-type">Naravni · Redki</div></div><div class="fruit-badges"><span class="badge badge-rare">Redki</span><span class="badge badge-natural">Naravni</span></div></div>
-      <div class="fruit-desc"><strong>Imunost na strelno orožje</strong> (puške, topovske krogle). Raztegljivi udarci. Klasičen sadež po motivu Luffy-ja iz One Piece.</div>
+      <div class="fruit-header"><div><div class="fruit-name">🪃 Rubber / Guma</div><div class="fruit-type" data-sl="Naravni · Redki">Natural · Rare</div></div><div class="fruit-badges"><span class="badge badge-rare" data-sl="Redki">Rare</span><span class="badge badge-natural" data-sl="Naravni">Natural</span></div></div>
+      <div class="fruit-desc" data-sl="&lt;strong&gt;Imunost na strelno orožje&lt;/strong&gt; (puške, topovske krogle). Raztegljivi udarci. Klasičen sadež po motivu Luffy-ja iz One Piece."><strong>Immune to ranged weapons</strong> (guns, cannonballs). Stretchy punches. Classic One Piece Luffy-inspired fruit.</div>
       <div class="fruit-uses"><span class="use-tag pvp">PvP</span></div>
     </div>
 
     <div class="fruit-card rare" data-rarity="rare">
-      <div class="fruit-header"><div><div class="fruit-name">🧱 Barrier / Prepreka</div><div class="fruit-type">Naravni · Redki</div></div><div class="fruit-badges"><span class="badge badge-rare">Redki</span><span class="badge badge-natural">Naravni</span></div></div>
-      <div class="fruit-desc">Nevidne pregrade — <strong>ščiti, pasti, blokade</strong>. Unikaten kontrolni sadež ki zaustavi gibanje nasprotnikov v PvP-ju.</div>
+      <div class="fruit-header"><div><div class="fruit-name">🧱 Barrier / Prepreka</div><div class="fruit-type" data-sl="Naravni · Redki">Natural · Rare</div></div><div class="fruit-badges"><span class="badge badge-rare" data-sl="Redki">Rare</span><span class="badge badge-natural" data-sl="Naravni">Natural</span></div></div>
+      <div class="fruit-desc" data-sl="Nevidne pregrade — &lt;strong&gt;ščiti, pasti, blokade&lt;/strong&gt;. Unikaten kontrolni sadež ki zaustavi gibanje nasprotnikov.">Invisible walls — <strong>shields, traps, blockades</strong>. Unique control fruit that stops enemy movement in PvP.</div>
       <div class="fruit-uses"><span class="use-tag pvp">PvP</span></div>
     </div>
 
     <div class="fruit-card rare" data-rarity="rare">
-      <div class="fruit-header"><div><div class="fruit-name">🕸️ String / Nit</div><div class="fruit-type">Naravni · Redki</div></div><div class="fruit-badges"><span class="badge badge-rare">Redki</span><span class="badge badge-natural">Naravni</span></div></div>
-      <div class="fruit-desc"><strong>Kontrola z nitmi</strong> — metanje mreže, rezanje, imobilizacija. Dober za combo igranje. Inspiriran po Doflamingu iz One Piece.</div>
+      <div class="fruit-header"><div><div class="fruit-name">🕸️ String / Nit</div><div class="fruit-type" data-sl="Naravni · Redki">Natural · Rare</div></div><div class="fruit-badges"><span class="badge badge-rare" data-sl="Redki">Rare</span><span class="badge badge-natural" data-sl="Naravni">Natural</span></div></div>
+      <div class="fruit-desc" data-sl="&lt;strong&gt;Kontrola z nitmi&lt;/strong&gt; — metanje mreže, rezanje, imobilizacija. Dober za combo igranje. Inspiriran po Doflamingu iz One Piece."><strong>String control</strong> — net throw, cutting, immobilization. Good for combo play. Inspired by Doflamingo from One Piece.</div>
       <div class="fruit-uses"><span class="use-tag pvp">PvP</span></div>
     </div>
 
     <div class="fruit-card rare" data-rarity="rare">
-      <div class="fruit-header"><div><div class="fruit-name">📌 Spike / Bodica</div><div class="fruit-type">Naravni · Redki</div></div><div class="fruit-badges"><span class="badge badge-rare">Redki</span><span class="badge badge-natural">Naravni</span></div></div>
-      <div class="fruit-desc">Bodičasti napadi — <strong>bodice iz telesa, metanje bodic</strong>. Soliden sadež za vmesno fazo igre. Enostaven za uporabo.</div>
+      <div class="fruit-header"><div><div class="fruit-name">📌 Spike / Bodica</div><div class="fruit-type" data-sl="Naravni · Redki">Natural · Rare</div></div><div class="fruit-badges"><span class="badge badge-rare" data-sl="Redki">Rare</span><span class="badge badge-natural" data-sl="Naravni">Natural</span></div></div>
+      <div class="fruit-desc" data-sl="Bodičasti napadi — &lt;strong&gt;bodice iz telesa, metanje bodic&lt;/strong&gt;. Soliden sadež za vmesno fazo igre. Enostaven za uporabo.">Spike attacks — <strong>spikes from body, spike throwing</strong>. Solid mid-game fruit. Easy to use.</div>
       <div class="fruit-uses"><span class="use-tag pve">PvE</span></div>
     </div>
 
-    <!-- UNCOMMON 4 -->
+    <!-- UNCOMMON -->
     <div class="fruit-card uncommon" data-rarity="uncommon">
-      <div class="fruit-header"><div><div class="fruit-name">🌀 Spin / Vrtenje</div><div class="fruit-type">Naravni · Neobičajni</div></div><div class="fruit-badges"><span class="badge badge-uncommon">Neobičajni</span><span class="badge badge-natural">Naravni</span></div></div>
-      <div class="fruit-desc">Vrtinčni napadi in let — <strong>poceni sadež z letom</strong>. Idealen za začetnike ki hočejo mobilnost brez velikih stroškov. Cena: 7,500 Beli.</div>
-      <div class="fruit-uses"><span class="use-tag fly">Let</span></div>
+      <div class="fruit-header"><div><div class="fruit-name">🌀 Spin / Vrtenje</div><div class="fruit-type" data-sl="Naravni · Neobičajni">Natural · Uncommon</div></div><div class="fruit-badges"><span class="badge badge-uncommon" data-sl="Neobičajni">Uncommon</span><span class="badge badge-natural" data-sl="Naravni">Natural</span></div></div>
+      <div class="fruit-desc" data-sl="Vrtinčni napadi in let — &lt;strong&gt;poceni sadež z letom&lt;/strong&gt;. Idealen za začetnike ki hočejo mobilnost brez velikih stroškov. Cena: 7.500 Beli.">Spin attacks and flight — <strong>cheap fruit with flight</strong>. Ideal for beginners wanting mobility without big costs. Cost: 7,500 Beli.</div>
+      <div class="fruit-uses"><span class="use-tag fly" data-sl="Let">Flight</span></div>
     </div>
 
     <div class="fruit-card uncommon" data-rarity="uncommon">
-      <div class="fruit-header"><div><div class="fruit-name">💣 Bomb / Bomba</div><div class="fruit-type">Naravni · Neobičajni</div></div><div class="fruit-badges"><span class="badge badge-uncommon">Neobičajni</span><span class="badge badge-natural">Naravni</span></div></div>
-      <div class="fruit-desc">Eksplozivni napadi — <strong>metanje bomb, eksplozivni udarci</strong>. Začetniški AOE sadež, dober za prve ure igre.</div>
-      <div class="fruit-uses"><span class="use-tag pve">PvE</span></div>
-    </div>
-
-    <div class="fruit-card uncommon" data-rarity="uncommon">
-      <div class="fruit-header"><div><div class="fruit-name">🌿 Spring / Vzmet</div><div class="fruit-type">Naravni · Neobičajni</div></div><div class="fruit-badges"><span class="badge badge-uncommon">Neobičajni</span><span class="badge badge-natural">Naravni</span></div></div>
-      <div class="fruit-desc"><strong>Vzmetni skoki in napadi</strong> — visoki skoki, vzmetni udarci. Unikaten mobilnostni sadež za hitro premikanje in napade od zgoraj.</div>
+      <div class="fruit-header"><div><div class="fruit-name">💣 Bomb / Bomba</div><div class="fruit-type" data-sl="Naravni · Neobičajni">Natural · Uncommon</div></div><div class="fruit-badges"><span class="badge badge-uncommon" data-sl="Neobičajni">Uncommon</span><span class="badge badge-natural" data-sl="Naravni">Natural</span></div></div>
+      <div class="fruit-desc" data-sl="Eksplozivni napadi — &lt;strong&gt;metanje bomb, eksplozivni udarci&lt;/strong&gt;. Začetniški AoE sadež, dober za prve ure igre.">Explosive attacks — <strong>bomb throw, explosive strikes</strong>. Beginner AoE fruit, good for first hours of play.</div>
       <div class="fruit-uses"><span class="use-tag pve">PvE</span></div>
     </div>
 
     <div class="fruit-card uncommon" data-rarity="uncommon">
-      <div class="fruit-header"><div><div class="fruit-name">✂️ Chop / Rezanje</div><div class="fruit-type">Naravni · Neobičajni</div></div><div class="fruit-badges"><span class="badge badge-uncommon">Neobičajni</span><span class="badge badge-natural">Naravni</span></div></div>
-      <div class="fruit-desc"><strong>Imunost na mečne napade</strong> — telo se razreže na dele ampak ne umreš! Popolna obramba pred meči. Slabši za ofenzivo.</div>
+      <div class="fruit-header"><div><div class="fruit-name">🌿 Spring / Vzmet</div><div class="fruit-type" data-sl="Naravni · Neobičajni">Natural · Uncommon</div></div><div class="fruit-badges"><span class="badge badge-uncommon" data-sl="Neobičajni">Uncommon</span><span class="badge badge-natural" data-sl="Naravni">Natural</span></div></div>
+      <div class="fruit-desc" data-sl="&lt;strong&gt;Vzmetni skoki in napadi&lt;/strong&gt; — visoki skoki, vzmetni udarci. Unikaten mobilnostni sadež za hitro premikanje in napade od zgoraj."><strong>Spring jumps and attacks</strong> — high jumps, spring strikes. Unique mobility fruit for fast movement and top-down attacks.</div>
+      <div class="fruit-uses"><span class="use-tag pve">PvE</span></div>
+    </div>
+
+    <div class="fruit-card uncommon" data-rarity="uncommon">
+      <div class="fruit-header"><div><div class="fruit-name">✂️ Chop / Rezanje</div><div class="fruit-type" data-sl="Naravni · Neobičajni">Natural · Uncommon</div></div><div class="fruit-badges"><span class="badge badge-uncommon" data-sl="Neobičajni">Uncommon</span><span class="badge badge-natural" data-sl="Naravni">Natural</span></div></div>
+      <div class="fruit-desc" data-sl="&lt;strong&gt;Imunost na mečne napade&lt;/strong&gt; — telo se razreže na dele ampak ne umreš! Popolna obramba pred meči. Slabši za ofenzivo."><strong>Immune to sword attacks</strong> — body gets sliced apart but you don't die! Complete defense against swords. Weak offensively.</div>
       <div class="fruit-uses"><span class="use-tag pvp">PvP</span></div>
     </div>
 
-    <!-- COMMON 3 -->
+    <!-- COMMON -->
     <div class="fruit-card common" data-rarity="common">
-      <div class="fruit-header"><div><div class="fruit-name">⚖️ Kilo</div><div class="fruit-type">Naravni · Navadni</div></div><div class="fruit-badges"><span class="badge badge-common">Navadni</span><span class="badge badge-natural">Naravni</span></div></div>
-      <div class="fruit-desc">Kontrola teže — <strong>povečanje in zmanjšanje mase</strong>. Najcenejši sadež (100 Beli). Primeren zgolj za testiranje ali prve minute igre.</div>
+      <div class="fruit-header"><div><div class="fruit-name">⚖️ Kilo</div><div class="fruit-type" data-sl="Naravni · Navadni">Natural · Common</div></div><div class="fruit-badges"><span class="badge badge-common" data-sl="Navadni">Common</span><span class="badge badge-natural" data-sl="Naravni">Natural</span></div></div>
+      <div class="fruit-desc" data-sl="Kontrola teže — &lt;strong&gt;povečanje in zmanjšanje mase&lt;/strong&gt;. Najcenejši sadež (100 Beli). Primeren zgolj za testiranje ali prve minute igre.">Weight control — <strong>increase and decrease mass</strong>. Cheapest fruit (100 Beli). Only useful for testing or the first minutes of play.</div>
       <div class="fruit-uses"><span class="use-tag pve">PvE</span></div>
-    </div>
-
-    <div class="fruit-card common" data-rarity="common">
-      <div class="fruit-header"><div><div class="fruit-name">🦅 Falcon / Orel</div><div class="fruit-type">Zver · Navadni</div></div><div class="fruit-badges"><span class="badge badge-common">Navadni</span><span class="badge badge-beast">Zver</span></div></div>
-      <div class="fruit-desc">Preobrazba v orla — <strong>let, hitri drsni napadi</strong>. Eden najcenejših sadeži z letom. Dobro zgolj za mobilnost.</div>
-      <div class="fruit-uses"><span class="use-tag fly">Let</span></div>
     </div>
 
     <div class="fruit-card common" data-rarity="common">
-      <div class="fruit-header"><div><div class="fruit-name">🐻 Bear / Medved</div><div class="fruit-type">Zver · Navadni</div></div><div class="fruit-badges"><span class="badge badge-common">Navadni</span><span class="badge badge-beast">Zver</span></div></div>
-      <div class="fruit-desc">Medvedja preobrazba — <strong>medvedji udarci, metanje sovražnikov</strong>. Navadni sadež, primeren le za prvih 50 nivojev.</div>
+      <div class="fruit-header"><div><div class="fruit-name">🦅 Falcon / Orel</div><div class="fruit-type" data-sl="Zver · Navadni">Beast · Common</div></div><div class="fruit-badges"><span class="badge badge-common" data-sl="Navadni">Common</span><span class="badge badge-beast" data-sl="Zver">Beast</span></div></div>
+      <div class="fruit-desc" data-sl="Preobrazba v orla — &lt;strong&gt;let, hitri drsni napadi&lt;/strong&gt;. Eden najcenejših sadeži z letom. Dobro zgolj za mobilnost.">Eagle transformation — <strong>flight, fast glide attacks</strong>. One of the cheapest flight fruits. Good only for mobility.</div>
+      <div class="fruit-uses"><span class="use-tag fly" data-sl="Let">Flight</span></div>
+    </div>
+
+    <div class="fruit-card common" data-rarity="common">
+      <div class="fruit-header"><div><div class="fruit-name">🐻 Bear / Medved</div><div class="fruit-type" data-sl="Zver · Navadni">Beast · Common</div></div><div class="fruit-badges"><span class="badge badge-common" data-sl="Navadni">Common</span><span class="badge badge-beast" data-sl="Zver">Beast</span></div></div>
+      <div class="fruit-desc" data-sl="Medvedja preobrazba — &lt;strong&gt;medvedji udarci, metanje sovražnikov&lt;/strong&gt;. Navadni sadež z malo posebnih sposobnosti, primeren le za začetek.">Bear transformation — <strong>bear strikes, throw enemies</strong>. Basic fruit with few special abilities, only for early game.</div>
       <div class="fruit-uses"><span class="use-tag pve">PvE</span></div>
     </div>
 
@@ -518,10 +530,10 @@ footer a:hover{text-decoration:underline;}
 <!-- SWORDS -->
 <hr style="border:none;border-top:1px solid var(--border)">
 <div class="section" id="swords">
-  <div class="section-title">⚔️ Meči — Tier Lista (april 2026)</div>
-  <p class="section-sub">40 mečev v 5 redkostih. S = najboljši, C = začetniški.</p>
+  <div class="section-title">⚔️ <span data-sl="Meči — Tier Lista (april 2026)">Swords — Tier List (April 2026)</span></div>
+  <p class="section-sub" data-sl="40 mečev v 5 redkostih. S = najboljši, C = začetniški.">40 swords in 5 rarities. S = best, C = starter.</p>
   <div class="tabs">
-    <button class="tab-btn active" onclick="filterSwords('all',this)">Vsi</button>
+    <button class="tab-btn active" onclick="filterSwords('all',this)" data-sl="Vsi">All</button>
     <button class="tab-btn" onclick="filterSwords('s',this)" style="color:var(--s);border-color:rgba(255,79,79,0.3)">S-Tier</button>
     <button class="tab-btn" onclick="filterSwords('a',this)" style="color:var(--a);border-color:rgba(255,154,60,0.3)">A-Tier</button>
     <button class="tab-btn" onclick="filterSwords('b',this)" style="color:var(--b);border-color:rgba(255,226,52,0.3)">B-Tier</button>
@@ -531,92 +543,92 @@ footer a:hover{text-decoration:underline;}
 
     <div class="sword-card tier-s" data-tier="s">
       <div class="sword-header"><div class="sword-name">🗡️ True Triple Katana (TTK)</div><span class="tier-badge s">S-Tier</span></div>
-      <div class="sword-meta"><span class="badge badge-mythical">Mitski</span><span class="sword-how">3x Katana → The Cave</span></div>
-      <div class="sword-desc"><strong>Najboljša za PvE in grind</strong> — 3 katane hkrati, ogromni AoE zamahi. Po zadnji posodobitvi AoE pokriva ogromno področje. Idealen za boss farme in grupe.</div>
+      <div class="sword-meta"><span class="badge badge-mythical" data-sl="Mitski">Mythical</span><span class="sword-how" data-sl="3x Katana → The Cave">3x Katana → The Cave</span></div>
+      <div class="sword-desc" data-sl="&lt;strong&gt;Najboljša za PvE in grind&lt;/strong&gt; — 3 katane hkrati, ogromni AoE zamahi. Po zadnji posodobitvi AoE pokriva ogromno področje. Idealen za boss farme in grupe."><strong>Best for PvE and grinding</strong> — 3 katanas at once, massive AoE swings. After the latest update AoE covers a huge area. Ideal for boss farms and enemy groups.</div>
     </div>
 
     <div class="sword-card tier-s" data-tier="s">
       <div class="sword-header"><div class="sword-name">🌟 Buddy Sword</div><span class="tier-badge s">S-Tier</span></div>
-      <div class="sword-meta"><span class="badge badge-mythical">Mitski</span><span class="sword-how">Nakup pri Buddy NPC</span></div>
-      <div class="sword-desc"><strong>Izjemen doseg in hitrost</strong> — eksplozivni naboji, hiter attack speed. Visok spretnostni strop, ki nagrajuje natančne zadetke. Neomejeni combo potenciali.</div>
+      <div class="sword-meta"><span class="badge badge-mythical" data-sl="Mitski">Mythical</span><span class="sword-how" data-sl="Nakup pri Buddy NPC">Buy from Buddy NPC</span></div>
+      <div class="sword-desc" data-sl="&lt;strong&gt;Izjemen doseg in hitrost&lt;/strong&gt; — eksplozivni naboji, hiter attack speed. Visok spretnostni strop, ki nagrajuje natančne zadetke. Neomejeni combo potenciali."><strong>Exceptional range and speed</strong> — explosive projectiles, fast attack speed. High skill ceiling that rewards accurate hits. Unlimited combo potential.</div>
     </div>
 
     <div class="sword-card tier-s" data-tier="s">
       <div class="sword-header"><div class="sword-name">🌌 Gravity Blade</div><span class="tier-badge s">S-Tier</span></div>
-      <div class="sword-meta"><span class="badge badge-mythical">Mitski</span><span class="sword-how">Padec iz Elite Pirates</span></div>
-      <div class="sword-desc"><strong>Privlači nasprotnike</strong> k sebi. Odlično z Led sadeži ali combo verigami. Gravitacijski pull + meč = nasprotnik ne more bežati.</div>
+      <div class="sword-meta"><span class="badge badge-mythical" data-sl="Mitski">Mythical</span><span class="sword-how" data-sl="Padec iz Elite Pirates">Drop from Elite Pirates</span></div>
+      <div class="sword-desc" data-sl="&lt;strong&gt;Privlači nasprotnike&lt;/strong&gt; k sebi. Odlično z Led sadeži ali combo verigami. Gravitacijski pull + meč = nasprotnik ne more bežati."><strong>Pulls enemies towards you</strong>. Great with Ice fruit or combo chains. Gravity pull + sword = enemy can't escape.</div>
     </div>
 
     <div class="sword-card tier-a" data-tier="a">
       <div class="sword-header"><div class="sword-name">⚔️ Cursed Dual Katana (CDK)</div><span class="tier-badge a">A-Tier</span></div>
-      <div class="sword-meta"><span class="badge badge-legendary">Legendarni</span><span class="sword-how">Yama + Tushita → Devouring God</span></div>
-      <div class="sword-desc"><strong>Kralj PvP-ja</strong> — dual katani z izjemnimi spretnostmi, dolg doseg, hiter. <strong>Prelomi Instinct</strong> sovražnikov. Najtežji meč za pridobiti — toda najboljši A-tier PvP orožje.</div>
+      <div class="sword-meta"><span class="badge badge-legendary" data-sl="Legendarni">Legendary</span><span class="sword-how">Yama + Tushita → Devouring God</span></div>
+      <div class="sword-desc" data-sl="&lt;strong&gt;Kralj PvP-ja&lt;/strong&gt; — dual katani z izjemnimi spretnostmi, dolg doseg, hiter. &lt;strong&gt;Prelomi Instinct&lt;/strong&gt; sovražnikov. Najtežji meč za pridobiti — toda najboljše A-tier PvP orožje."><strong>PvP king</strong> — dual katanas with exceptional skills, long range, fast. <strong>Breaks enemy Instinct</strong>. Hardest sword to obtain — but the best A-tier PvP weapon.</div>
     </div>
 
     <div class="sword-card tier-a" data-tier="a">
       <div class="sword-header"><div class="sword-name">⛩️ Tushita</div><span class="tier-badge a">A-Tier</span></div>
-      <div class="sword-meta"><span class="badge badge-legendary">Legendarni</span><span class="sword-how">Quest: Celestial God scroll</span></div>
-      <div class="sword-desc"><strong>Hitre animacije, odlična PvP</strong> — nebo se odpre, svetlobni meč udari. En del za CDK. Sam po sebi odlična agresivna izbira.</div>
+      <div class="sword-meta"><span class="badge badge-legendary" data-sl="Legendarni">Legendary</span><span class="sword-how">Quest: Celestial God scroll</span></div>
+      <div class="sword-desc" data-sl="&lt;strong&gt;Hitre animacije, odlična PvP&lt;/strong&gt; — nebo se odpre, svetlobni meč udari. En del za CDK. Sam po sebi odlična agresivna izbira."><strong>Fast animations, excellent PvP</strong> — sky opens, light sword strikes. One half needed for CDK. Great aggressive choice on its own.</div>
     </div>
 
     <div class="sword-card tier-a" data-tier="a">
       <div class="sword-header"><div class="sword-name">🏔️ Yama</div><span class="tier-badge a">A-Tier</span></div>
-      <div class="sword-meta"><span class="badge badge-legendary">Legendarni</span><span class="sword-how">Nakup z Ectoplasm · Graveyard</span></div>
-      <div class="sword-desc"><strong>Visoka surova škoda</strong> — temni meč z masivnimi rezninami. En del za CDK. Sam po sebi odličen za PvE napade na elitne sovražnike.</div>
+      <div class="sword-meta"><span class="badge badge-legendary" data-sl="Legendarni">Legendary</span><span class="sword-how" data-sl="Nakup z Ectoplasm · Graveyard">Buy with Ectoplasm · Graveyard</span></div>
+      <div class="sword-desc" data-sl="&lt;strong&gt;Visoka surova škoda&lt;/strong&gt; — temni meč z masivnimi rezninami. En del za CDK. Sam po sebi odličen za PvE napade na elitne sovražnike."><strong>High raw damage</strong> — dark sword with massive slashes. One half needed for CDK. Excellent for PvE attacks on elite enemies alone.</div>
     </div>
 
     <div class="sword-card tier-a" data-tier="a">
       <div class="sword-header"><div class="sword-name">🌑 Dark Blade</div><span class="tier-badge a">A-Tier</span></div>
-      <div class="sword-meta"><span class="badge badge-legendary">Legendarni</span><span class="sword-how">🛒 Gamepass (Robux)</span></div>
-      <div class="sword-desc"><strong>Hiter, visoka škoda</strong> — temni val in eksplozija. Nizka zakasnitev, hitri zamahi. Nagrajuje čisto combo igro. Potrebuješ Gamepass.</div>
+      <div class="sword-meta"><span class="badge badge-legendary" data-sl="Legendarni">Legendary</span><span class="sword-how">🛒 Gamepass (Robux)</span></div>
+      <div class="sword-desc" data-sl="&lt;strong&gt;Hiter, visoka škoda&lt;/strong&gt; — temni val in eksplozija. Nizka zakasnitev, hitri zamahi. Nagrajuje čisto combo igro. Potrebuješ Gamepass."><strong>Fast, high damage</strong> — dark wave and explosion. Low lag, fast swings. Rewards clean combo play. Requires Gamepass.</div>
     </div>
 
     <div class="sword-card tier-a" data-tier="a">
       <div class="sword-header"><div class="sword-name">💀 Hallow Scythe</div><span class="tier-badge a">A-Tier</span></div>
-      <div class="sword-meta"><span class="badge badge-mythical">Mitski</span><span class="sword-how">Padec iz Cursed Skeleton boss</span></div>
-      <div class="sword-desc"><strong>Demonska kosa</strong> z masivnim AOE — duhovna kladivo, eksplozija z lobanjami. Unikatna estetika in soliden PvP/PvE meč.</div>
+      <div class="sword-meta"><span class="badge badge-mythical" data-sl="Mitski">Mythical</span><span class="sword-how" data-sl="Padec iz Cursed Skeleton boss">Drop from Cursed Skeleton boss</span></div>
+      <div class="sword-desc" data-sl="&lt;strong&gt;Demonska kosa&lt;/strong&gt; z masivnim AOE — duhovno kladivo, eksplozija z lobanjami. Unikatna estetika in soliden PvP/PvE meč."><strong>Demonic scythe</strong> with massive AoE — spirit hammer, skull explosion. Unique aesthetics and solid PvP/PvE sword.</div>
     </div>
 
     <div class="sword-card tier-a" data-tier="a">
       <div class="sword-header"><div class="sword-name">🐉 Dragonheart</div><span class="tier-badge a">A-Tier</span></div>
-      <div class="sword-meta"><span class="badge badge-legendary">Legendarni</span><span class="sword-how">Zmajevo srce quest chain</span></div>
-      <div class="sword-desc"><strong>Zmajev ognjen meč</strong> — ognjeni zamahi, zmajev dih. Odlična kombinacija z Dragon sadeži. Visoka škoda na posamezne tarče.</div>
+      <div class="sword-meta"><span class="badge badge-legendary" data-sl="Legendarni">Legendary</span><span class="sword-how" data-sl="Zmajevo srce quest chain">Dragon heart quest chain</span></div>
+      <div class="sword-desc" data-sl="&lt;strong&gt;Zmajev ognjen meč&lt;/strong&gt; — ognjeni zamahi, zmajev dih. Odlična kombinacija z Dragon sadežem. Visoka škoda na posamezne tarče."><strong>Dragon fire sword</strong> — fiery swings, dragon breath. Great combo with Dragon fruit. High damage on single targets.</div>
     </div>
 
     <div class="sword-card tier-a" data-tier="a">
       <div class="sword-header"><div class="sword-name">🔱 Spikey Trident</div><span class="tier-badge a">A-Tier</span></div>
-      <div class="sword-meta"><span class="badge badge-legendary">Legendarni</span><span class="sword-how">Padec iz Ship Raids</span></div>
-      <div class="sword-desc"><strong>Hiter combo speed</strong> — trizob z hitrimi napadi, električni udarci. Po posodobitvi combo hitrost povečana. Dober vzpon v meta listi.</div>
+      <div class="sword-meta"><span class="badge badge-legendary" data-sl="Legendarni">Legendary</span><span class="sword-how" data-sl="Padec iz Ship Raids">Drop from Ship Raids</span></div>
+      <div class="sword-desc" data-sl="&lt;strong&gt;Hiter combo speed&lt;/strong&gt; — trizob z hitrimi napadi, električni udarci. Po posodobitvi combo hitrost povečana. Dober vzpon v meta listi."><strong>Fast combo speed</strong> — trident with quick attacks, electric strikes. Combo speed increased after update. Rising in the meta.</div>
     </div>
 
     <div class="sword-card tier-b" data-tier="b">
       <div class="sword-header"><div class="sword-name">🪖 Bisento V2</div><span class="tier-badge b">B-Tier</span></div>
-      <div class="sword-meta"><span class="badge badge-legendary">Legendarni</span><span class="sword-how">Padec iz Whitebeard boss</span></div>
-      <div class="sword-desc">Velika kopja — <strong>masiven AOE zamah</strong>. Odlično za PvE skupinski boj. Solidna zanesljiva izbira za grind in boss fighte.</div>
+      <div class="sword-meta"><span class="badge badge-legendary" data-sl="Legendarni">Legendary</span><span class="sword-how" data-sl="Padec iz Whitebeard boss">Drop from Whitebeard boss</span></div>
+      <div class="sword-desc" data-sl="Velika kopja — &lt;strong&gt;masiven AOE zamah&lt;/strong&gt;. Odlično za PvE skupinski boj. Zanesljiva izbira za grind in boss fighte.">Large spear — <strong>massive AoE swing</strong>. Great for PvE group fights. Reliable choice for grinding and boss fights.</div>
     </div>
 
     <div class="sword-card tier-b" data-tier="b">
       <div class="sword-header"><div class="sword-name">🦊 Fox Lamp</div><span class="tier-badge b">B-Tier</span></div>
-      <div class="sword-meta"><span class="badge badge-legendary">Legendarni</span><span class="sword-how">Kitsune quest chain</span></div>
-      <div class="sword-desc">Lisičja svetilka — <strong>ognjena kombinacija napadov</strong>, hit and run stil. Lepo se kombinira s Kitsune sadežem. Solidna mid-game izbira.</div>
+      <div class="sword-meta"><span class="badge badge-legendary" data-sl="Legendarni">Legendary</span><span class="sword-how" data-sl="Kitsune quest chain">Kitsune quest chain</span></div>
+      <div class="sword-desc" data-sl="Lisičja svetilka — &lt;strong&gt;ognjena kombinacija napadov&lt;/strong&gt;, hit and run stil. Dobra kombinacija s Kitsune sadežem. Solidna mid-game izbira.">Fox lantern — <strong>fiery combo attacks</strong>, hit-and-run style. Good combo with Kitsune fruit. Solid mid-game choice.</div>
     </div>
 
     <div class="sword-card tier-b" data-tier="b">
       <div class="sword-header"><div class="sword-name">🌊 Pole V2</div><span class="tier-badge b">B-Tier</span></div>
-      <div class="sword-meta"><span class="badge badge-rare">Redki</span><span class="sword-how">Nakup pri Fishman Island NPC</span></div>
-      <div class="sword-desc">Morski drog — <strong>vodeni napadi, AoE zamah</strong>. Dober za vmesne nivoje in farming na morskih conah. Relativno enostavno pridobiti.</div>
+      <div class="sword-meta"><span class="badge badge-rare" data-sl="Redki">Rare</span><span class="sword-how" data-sl="Nakup pri Fishman Island NPC">Buy from Fishman Island NPC</span></div>
+      <div class="sword-desc" data-sl="Morski drog — &lt;strong&gt;vodeni napadi, AoE zamah&lt;/strong&gt;. Dober za vmesne nivoje in farming na morskih conah. Relativno enostavno pridobiti.">Water staff — <strong>water attacks, AoE swing</strong>. Good for mid levels and farming in sea zones. Relatively easy to obtain.</div>
     </div>
 
     <div class="sword-card tier-c" data-tier="c">
       <div class="sword-header"><div class="sword-name">🗡️ Katana</div><span class="tier-badge c">C-Tier</span></div>
-      <div class="sword-meta"><span class="badge badge-uncommon">Neobičajni</span><span class="sword-how">Nakup pri Weapon Dealer</span></div>
-      <div class="sword-desc">Osnovna katana — <strong>hiter začetniški meč</strong>. Solidna osnova za začetek igre, hitro zamenjaj z Rare+ opcijo ko je mogoče.</div>
+      <div class="sword-meta"><span class="badge badge-uncommon" data-sl="Neobičajni">Uncommon</span><span class="sword-how" data-sl="Nakup pri Weapon Dealer">Buy from Weapon Dealer</span></div>
+      <div class="sword-desc" data-sl="Osnovna katana — &lt;strong&gt;hiter začetniški meč&lt;/strong&gt;. Solidna osnova za začetek, hitro zamenjaj z Rare+ opcijo.">Basic katana — <strong>fast starter sword</strong>. Solid for early game, quickly replace with a Rare+ option when possible.</div>
     </div>
 
     <div class="sword-card tier-c" data-tier="c">
       <div class="sword-header"><div class="sword-name">⚔️ Cutlass</div><span class="tier-badge c">C-Tier</span></div>
-      <div class="sword-meta"><span class="badge badge-common">Navadni</span><span class="sword-how">Začetni meč</span></div>
-      <div class="sword-desc">Piratski meč — <strong>dober samo za prvih 100 nivojev</strong>. Takoj zamenjaj ko dobiš dostop do Rare nagrad.</div>
+      <div class="sword-meta"><span class="badge badge-common" data-sl="Navadni">Common</span><span class="sword-how" data-sl="Začetni meč">Starter sword</span></div>
+      <div class="sword-desc" data-sl="Piratski meč — &lt;strong&gt;dober samo za prvih 100 nivojev&lt;/strong&gt;. Takoj zamenjaj ko dobiš dostop do Rare nagrad.">Pirate sword — <strong>good only for the first 100 levels</strong>. Replace immediately once you access Rare rewards.</div>
     </div>
 
   </div><!-- /sword-grid -->
@@ -625,88 +637,88 @@ footer a:hover{text-decoration:underline;}
 <!-- EFFECTS -->
 <hr style="border:none;border-top:1px solid var(--border)">
 <div class="section" id="effects">
-  <div class="section-title">✨ Učinki in Sistemi</div>
-  <p class="section-sub">Ključni sistemi ki jih moraš razumeti za napredovanje v igri</p>
+  <div class="section-title">✨ <span data-sl="Učinki in Sistemi">Effects &amp; Systems</span></div>
+  <p class="section-sub" data-sl="Ključni sistemi ki jih moraš razumeti za napredovanje v igri">Key systems you need to understand to progress in the game</p>
   <div class="effects-grid">
 
     <div class="effect-card">
       <div class="effect-icon">🖤</div>
       <div class="effect-body">
-        <h3>Buso Haki (Oborožitveni)</h3>
-        <p><strong>Trdi oklep</strong> — brez njega ne moreš poškodovati Logia sadežnikov. Višji nivo Haki = večja škoda in doseg. <strong>Obvezen za 2. morje.</strong></p>
-        <div class="effect-note">📍 Pridobi pri: Ability Teacher · Cena: 25,000 Beli</div>
+        <h3 data-sl="Buso Haki (Oborožitveni)">Buso Haki (Armament)</h3>
+        <p data-sl="&lt;strong&gt;Trdi oklep&lt;/strong&gt; — brez njega ne moreš poškodovati Logia sadežnikov. Višji nivo Haki = večja škoda in doseg. &lt;strong&gt;Obvezen za 2. morje.&lt;/strong&gt;"><strong>Hard armor</strong> — without it you can't damage Logia fruit users. Higher Haki level = more damage and range. <strong>Mandatory for Sea 2.</strong></p>
+        <div class="effect-note" data-sl="📍 Pridobi pri: Ability Teacher · Cena: 25.000 Beli">📍 Get from: Ability Teacher · Cost: 25,000 Beli</div>
       </div>
     </div>
 
     <div class="effect-card">
       <div class="effect-icon">👁️</div>
       <div class="effect-body">
-        <h3>Ken Haki / Instinct (Opazovanje)</h3>
-        <p><strong>Samodejno izogibanje napadom.</strong> Vsak napad ima % šanso za auto-dodge. <strong>Instinct V2</strong> vidita skrite in nevidne sovražnike. Odkleneta se postopoma.</p>
-        <div class="effect-note">📍 Nadgrajuj z bojevanjem — višja izkušenost = boljši dodge %</div>
+        <h3 data-sl="Ken Haki / Instinct (Opazovanje)">Ken Haki / Instinct (Observation)</h3>
+        <p data-sl="&lt;strong&gt;Samodejno izogibanje napadom.&lt;/strong&gt; Vsak napad ima % šanso za auto-dodge. &lt;strong&gt;Instinct V2&lt;/strong&gt; vidita skrite in nevidne sovražnike. Odkleneta se postopoma."><strong>Auto-dodge attacks.</strong> Every attack has a % chance of auto-dodge. <strong>Instinct V2</strong> can see hidden and invisible enemies. Unlocks gradually.</p>
+        <div class="effect-note" data-sl="📍 Nadgrajuj z bojevanjem — višja izkušenost = boljši dodge %">📍 Upgrade through combat — more experience = better dodge %</div>
       </div>
     </div>
 
     <div class="effect-card">
       <div class="effect-icon">🛡️</div>
       <div class="effect-body">
-        <h3>Logia Imunost</h3>
-        <p>Elementarni sadeži (Flame, Ice, Light, Sand…) dajejo <strong>imunost na fizične napade</strong>. Nasprotnik mora imeti Buso Haki da te poškoduje.</p>
-        <div class="effect-note">⚠️ Logia imunost odpade v vodi!</div>
+        <h3 data-sl="Logia Imunost">Logia Immunity</h3>
+        <p data-sl="Elementarni sadeži (Flame, Ice, Light, Sand…) dajejo &lt;strong&gt;imunost na fizične napade&lt;/strong&gt;. Nasprotnik mora imeti Buso Haki da te poškoduje.">Elemental fruits (Flame, Ice, Light, Sand…) grant <strong>immunity to physical attacks</strong>. Enemy must have Buso Haki to damage you.</p>
+        <div class="effect-note" data-sl="⚠️ Logia imunost odpade v vodi!">⚠️ Logia immunity fails in water!</div>
       </div>
     </div>
 
     <div class="effect-card">
       <div class="effect-icon">⚡</div>
       <div class="effect-body">
-        <h3>Prebujanje (Awakening)</h3>
-        <p>Zberi <strong>Fragments</strong> pri bossih in Raids, nato prebudi sadež pri Coastal God. <strong>Prebujene sposobnosti bistveno močnejše</strong> — Buddha +8x doseg!</p>
-        <div class="effect-note">📍 Fragments: Boss drops, Raid rewards, Sea Chests</div>
+        <h3 data-sl="Prebujanje (Awakening)">Awakening</h3>
+        <p data-sl="Zberi &lt;strong&gt;Fragments&lt;/strong&gt; pri bossih in Raids, nato prebudi sadež pri Coastal God. &lt;strong&gt;Prebujene sposobnosti bistveno močnejše&lt;/strong&gt; — Buddha +8x doseg!">Collect <strong>Fragments</strong> from bosses and Raids, then awaken your fruit at Coastal God. <strong>Awakened abilities are massively stronger</strong> — Buddha +8x reach!</p>
+        <div class="effect-note" data-sl="📍 Fragments: Boss drops, Raid nagrade, Sea Chests">📍 Fragments: Boss drops, Raid rewards, Sea Chests</div>
       </div>
     </div>
 
     <div class="effect-card">
       <div class="effect-icon">🌊</div>
       <div class="effect-body">
-        <h3>Hoja po vodi</h3>
-        <p>Nekateri sadeži (Buddha, Phoenix) omogočajo <strong>hojo po vodi</strong>. Sadeži sicer odvzamejo zdravje v vodi. Brez specijalnih sadeži voda = smrt.</p>
-        <div class="effect-note">💡 Dragoon Trident in nekateri meči dajejo vodeno hojo</div>
+        <h3 data-sl="Hoja po vodi">Water Walking</h3>
+        <p data-sl="Nekateri sadeži (Buddha, Phoenix) omogočajo &lt;strong&gt;hojo po vodi&lt;/strong&gt;. Sadeži sicer odvzamejo zdravje v vodi. Brez specijalnih sadeži voda = smrt.">Some fruits (Buddha, Phoenix) allow <strong>walking on water</strong>. Fruits otherwise drain health in water. Without special fruits, water = death.</p>
+        <div class="effect-note" data-sl="💡 Dragoon Trident in nekateri meči dajejo vodeno hojo">💡 Dragoon Trident and some swords also grant water walking</div>
       </div>
     </div>
 
     <div class="effect-card">
       <div class="effect-icon">🔨</div>
       <div class="effect-body">
-        <h3>Blacksmith — Nadgradnja</h3>
-        <p>Pri Blacksmith NPC <strong>nadgradiš meč ali sadež</strong> z materiali za višjo škodo. Vsak meč do 10 nadgradenj. <strong>Dragon Talon Sage</strong> enchanta z unikatnimi lastnostmi.</p>
-        <div class="effect-note">📍 Blacksmith: Shells Town · Dragon Talon: 3. morje</div>
+        <h3 data-sl="Blacksmith — Nadgradnja">Blacksmith — Upgrades</h3>
+        <p data-sl="Pri Blacksmith NPC &lt;strong&gt;nadgradiš meč ali sadež&lt;/strong&gt; z materiali za višjo škodo. Vsak meč do 10 nadgradenj. &lt;strong&gt;Dragon Talon Sage&lt;/strong&gt; enchanta z unikatnimi lastnostmi.">At the Blacksmith NPC <strong>upgrade your sword or fruit</strong> with materials for higher damage. Up to 10 upgrades per sword. <strong>Dragon Talon Sage</strong> enchants with unique properties.</p>
+        <div class="effect-note" data-sl="📍 Blacksmith: Shells Town · Dragon Talon: 3. morje">📍 Blacksmith: Shells Town · Dragon Talon: Sea 3</div>
       </div>
     </div>
 
     <div class="effect-card">
       <div class="effect-icon">📈</div>
       <div class="effect-body">
-        <h3>Mastery (Mojstrstvo orožja)</h3>
-        <p><strong>Vsako orožje in sadež ima Mastery nivo</strong> — višje = nova sposobnost odklenjena. Grindi z orožjem ki ga hočeš razviti. Mastery 300 odklene 3. sposobnost.</p>
-        <div class="effect-note">💡 Auto-clicker ≤800ms za hitrejši Mastery</div>
+        <h3 data-sl="Mastery (Mojstrstvo orožja)">Mastery</h3>
+        <p data-sl="&lt;strong&gt;Vsako orožje in sadež ima Mastery nivo&lt;/strong&gt; — višje = nova sposobnost odklenjena. Grindi z orožjem ki ga hočeš razviti. Mastery 300 odklene 3. sposobnost."><strong>Every weapon and fruit has a Mastery level</strong> — higher = new ability unlocked. Grind with the weapon you want to develop. Mastery 300 unlocks the 3rd ability.</p>
+        <div class="effect-note" data-sl="💡 Auto-clicker ≤800ms za hitrejši Mastery">💡 Auto-clicker ≤800ms for faster Mastery</div>
       </div>
     </div>
 
     <div class="effect-card">
       <div class="effect-icon">🎁</div>
       <div class="effect-body">
-        <h3>Sadežni spawni</h3>
-        <p>Sadeži se <strong>spawneajo naključno na mapi vsako uro</strong>. Mythical &lt;1% šansa. <strong>Blox Fruits Dealer</strong> prodaja naključni sadež za Robux/Beli vsako uro.</p>
-        <div class="effect-note">🎲 Mitski pri Dealerju = 2,900,000 Beli ali 2,550 R$</div>
+        <h3 data-sl="Sadežni spawni">Fruit Spawns</h3>
+        <p data-sl="Sadeži se &lt;strong&gt;spawneajo naključno na mapi vsako uro&lt;/strong&gt;. Mythical &lt;1% šansa. &lt;strong&gt;Blox Fruits Dealer&lt;/strong&gt; prodaja naključni sadež za Robux/Beli vsako uro.">Fruits <strong>spawn randomly on the map every hour</strong>. Mythical &lt;1% chance. <strong>Blox Fruits Dealer</strong> sells a random fruit for Robux/Beli every hour.</p>
+        <div class="effect-note" data-sl="🎲 Mitski pri Dealerju = 2.900.000 Beli ali 2.550 R$">🎲 Mythical at Dealer = 2,900,000 Beli or 2,550 R$</div>
       </div>
     </div>
 
     <div class="effect-card">
       <div class="effect-icon">✈️</div>
       <div class="effect-body">
-        <h3>Let (Flight)</h3>
-        <p>Sadeži ki omogočajo let: <strong>Light, Dragon, Phoenix, Rumble, Spin, Falcon, Spirit, Kitsune</strong>. Let bistveno poenostavi potovanje med otoki in grindanje.</p>
-        <div class="effect-note">💡 Light je najhitrejši let v igri</div>
+        <h3 data-sl="Let (Flight)">Flight</h3>
+        <p data-sl="Sadeži ki omogočajo let: &lt;strong&gt;Light, Dragon, Phoenix, Rumble, Spin, Falcon, Spirit, Kitsune&lt;/strong&gt;. Let bistveno poenostavi potovanje med otoki in grindanje.">Fruits that enable flight: <strong>Light, Dragon, Phoenix, Rumble, Spin, Falcon, Spirit, Kitsune</strong>. Flight greatly simplifies island travel and grinding.</p>
+        <div class="effect-note" data-sl="💡 Light je najhitrejši let v igri">💡 Light is the fastest flight in the game</div>
       </div>
     </div>
 
@@ -715,17 +727,46 @@ footer a:hover{text-decoration:underline;}
 
 <footer>
   <div style="font-size:1.5rem;margin-bottom:8px;">⚔️ 🍎 🌊</div>
-  <p>Blox Fruits Vodnik za Leva · Narejen april 2026</p>
+  <p data-sl="Blox Fruits Vodnik za Leva · Narejen april 2026">Blox Fruits Guide for Lev · Made April 2026</p>
   <div class="footer-sources">
     <a href="https://blox-fruits.fandom.com/wiki/Blox_Fruits" target="_blank">Blox Fruits Wiki</a>
     <a href="https://beebom.com/all-fruits-in-blox-fruits/" target="_blank">Beebom</a>
     <a href="https://techwiser.com/blox-fruits-swords-tier-list/" target="_blank">TechWiser</a>
     <a href="https://bloxfruitstrades.com" target="_blank">BloxFruitsTrades</a>
   </div>
-  <p class="footer-bottom">Podatki: april 2026 meta · Vse cene v Beli/R$</p>
+  <p class="footer-bottom" data-sl="Podatki: april 2026 meta · Vse cene v Beli/R$">Data: April 2026 meta · All prices in Beli/R$</p>
 </footer>
 
 <script>
+// ── Language switching (cache EN on first load, apply SL from data-sl) ──
+const enCache = new Map();
+document.querySelectorAll('[data-sl]').forEach(el => {
+  enCache.set(el, el.innerHTML);
+});
+
+function setLang(lang) {
+  document.documentElement.setAttribute('lang', lang);
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.getElementById('btn-sl').classList.toggle('active', lang === 'sl');
+  document.querySelectorAll('[data-sl]').forEach(el => {
+    if (lang === 'sl') {
+      el.innerHTML = el.getAttribute('data-sl');
+    } else {
+      const cached = enCache.get(el);
+      if (cached !== undefined) el.innerHTML = cached;
+    }
+  });
+  try { localStorage.setItem('blox-lang', lang); } catch(e) {}
+}
+
+// ── Restore saved language ──
+(function() {
+  let saved = 'en';
+  try { saved = localStorage.getItem('blox-lang') || 'en'; } catch(e) {}
+  if (saved === 'sl') setLang('sl');
+})();
+
+// ── Fruit filter ──
 function filterFruits(rarity, btn) {
   btn.closest('.tabs').querySelectorAll('button').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
@@ -733,6 +774,8 @@ function filterFruits(rarity, btn) {
     c.classList.toggle('hidden', rarity !== 'all' && c.dataset.rarity !== rarity);
   });
 }
+
+// ── Sword filter ──
 function filterSwords(tier, btn) {
   btn.closest('.tabs').querySelectorAll('button').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
@@ -740,6 +783,8 @@ function filterSwords(tier, btn) {
     c.classList.toggle('hidden', tier !== 'all' && c.dataset.tier !== tier);
   });
 }
+
+// ── Nav highlight on scroll ──
 const navLinks = document.querySelectorAll('.nav-link');
 const observer = new IntersectionObserver(entries => {
   entries.forEach(e => {
